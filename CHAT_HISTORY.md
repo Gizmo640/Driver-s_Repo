@@ -137,7 +137,7 @@ The user supplied this repository selection:
 
 > Yes. I packaged **Commonplace** to need only a current browser—no installations, internet, accounts, or AI models. All code, styling, illustrations, and sample documents are embedded.
 >
-> **[Download the portable app](/workspace/Hammers_Repo/artifacts/Commonplace-portable.zip)**  
+> **[Download the portable app](/workspace/Hammers_Repo/artifacts/Commonplace-portable.zip)**
 > Extract it, then open `Commonplace.html`. The package includes a start guide.
 >
 > Try importing a document, saving a passage, adding a note, and exporting your brief. Quotes retain their source and line numbers.
