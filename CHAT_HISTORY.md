@@ -168,7 +168,7 @@ The user supplied this repository selection:
 
 > I hadn’t committed or pushed the local files. That was my mistake.
 >
-> Fixed: everything is now on [`Driver-s_Repo/main`](https://github.com/Gizmo640/Driver-s_Repo), commit `0d1085a`—including source, tests, documentation, and the portable download. I verified GitHub has the commit.
+> Fixed: everything is now on [`Driver-s_Repo/main`](https://github.com/Gizmo640/Driver-s_Repo), commit `ca4c3cb`—including source, tests, documentation, and the portable download. I verified GitHub has the commit.
 >
 > [Download the portable app from your repo](https://github.com/Gizmo640/Driver-s_Repo/raw/refs/heads/main/artifacts/Commonplace-portable.zip).
 
@@ -196,7 +196,7 @@ The user supplied this repository selection:
 
 ### 29. Assistant — corrected Linux desktop handoff
 
-> Corrected and pushed to `main`: [`fc1b22a`](https://github.com/Gizmo640/Driver-s_Repo/commit/fc1b22a3b58fd19fe75acba8c4d923250b1a7045).
+> Corrected and pushed to `main`: [`46640b1`](https://github.com/Gizmo640/Driver-s_Repo/commit/46640b1d0fbad6e4b4ec08de1c9da4ffd91a4162).
 >
 > For your Linux desktop:
 >
@@ -271,7 +271,7 @@ The following is a summary of actions and tool results, not additional dialogue.
 - Verified that GitHub's `main` branch contained the exact pushed commit:
 
 ```text
-0d1085a9b39a4d57f27c2bd04d68293dbcde796b
+ca4c3cb5c1a0134b814e7d48f1fd36b59489e84d
 Build Commonplace research desk with portable offline edition
 ```
 
@@ -293,7 +293,7 @@ Build Commonplace research desk with portable offline edition
 - Committed and pushed the correction, then verified the exact remote `main` SHA:
 
 ```text
-fc1b22a3b58fd19fe75acba8c4d923250b1a7045
+46640b1d0fbad6e4b4ec08de1c9da4ffd91a4162
 Make no-install Linux desktop edition the primary user workflow
 ```
 
