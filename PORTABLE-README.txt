@@ -1,58 +1,61 @@
-COMMONPLACE — PORTABLE EDITION
-A private research desk by Driver
+COMMONPLACE — LINUX DESKTOP EDITION
 
-GET STARTED
-1. Extract this ZIP to a normal folder.
-2. Double-click Commonplace.html.
-3. If asked, choose a current browser such as Chrome, Edge, Firefox, or Safari.
+OPEN THE APP — NOTHING TO INSTALL
 
-That is the application. There is nothing to install or download.
-You do not need Node.js, Python, an account, an API key, or internet access.
-The browser must have JavaScript enabled. Your operating system and browser
-are not included in this package.
+1. Extract this ZIP using your Linux file manager.
+2. Keep the extracted Commonplace folder in a permanent place, such as Documents.
+3. Open your existing web browser and press Ctrl+O.
+4. Select Commonplace.html in the extracted folder and open it.
 
-TRY IT
-- Open a source. Press + beside a passage to keep it.
-- Open Your brief, add a note, and export the brief as Markdown.
-- Use Add to your library to import your own text documents.
-- Press / or Ctrl/Cmd K to search.
+You can also right-click Commonplace.html and choose Open With -> your browser.
+You may bookmark the page to return later.
 
-YOUR DATA
-Documents and notes stay in this browser on this computer. Nothing is uploaded.
-Use the lock/privacy button in the desktop sidebar, or the ? button at the top,
-then Back up workspace as JSON. Keep that backup somewhere safe.
-Restore a backup through Add to your library.
+No npm, Node.js, Python, terminal commands, build step, local server, account,
+API key, or ongoing internet connection is required. All application code,
+styling, illustrations, icons, and sample documents are embedded in this file.
+Use a current browser with JavaScript enabled. The operating system and browser
+are not included. You do not need a GPU or a local AI model.
 
-IMPORTANT FOR PORTABLE USE
-Keep Commonplace.html in the same place if you want to reuse its browser storage.
-Moving or renaming the file, changing browsers, clearing browser data, or using
-private browsing can make saved data unavailable. File-based storage behavior
-varies by browser. If saving is restricted or storage fills up, the app shows
-a warning and keeps changes in memory. Export a backup before closing it.
-For a reliable copy, export regularly. The HTML file itself does not change
-when you add documents or notes; your work is in browser storage or your backup.
-Storage is not encrypted. Anyone with access to this browser profile may be
-able to read it.
+IF YOU GOT THE WHOLE SOURCE REPOSITORY
 
-SUPPORTED MATERIAL
-UTF-8 TXT, Markdown, CSV, and JSON. Up to 2 MB per source and 8 MB total source
-text, subject to browser storage limits. PDF is not supported. CSV and JSON
-are read as text. Smaller libraries work best on low-powered machines.
+Open artifacts/Commonplace.html, which is already built. Do not open the root
+index.html, and do not run build or package-manager commands to use the app.
 
-WHAT'S INSIDE
-All application code, styling, vector illustrations, icons, and nine fictional
-sample sources are embedded in Commonplace.html. System fonts are used.
-There are no third-party runtime libraries or external assets to fetch.
-Related-source suggestions use local word comparisons, not an AI model.
+TRY YOUR OWN MATERIAL
 
-VALIDATION
-The standalone artifact was tested in Chromium with no sibling assets and
-network access disabled after loading. Reading, searching, saving a passage,
-and opening the brief passed. The cloud test browser blocks file:// URLs,
-so direct double-click launch was not tested there. Other browsers have not
-been independently tested.
+- Click Add to your library, or drag files from your Linux file manager.
+- Open a source and press + beside a passage to save its exact words and source.
+- Open Your brief, write a note, then export Markdown to your download folder.
+- Press / or Ctrl+K to search. Escape closes a source. Tab moves between actions.
 
-DEVELOPERS
-The separate source package contains a dependency-free Node.js development
-server, the readable source modules, and automated tests. Those tools are
-optional and are not needed to use this portable edition.
+Supported: UTF-8 TXT, Markdown, CSV, and JSON. PDF is not supported.
+Limit: 2 MB per source and 8 MB total source text, subject to browser storage.
+The nine starter documents are fictional and labeled as samples.
+Related sources use shared words, not an AI model or fact checking.
+
+KEEP YOUR WORK
+
+Your work is in this browser's storage, NOT inside Commonplace.html. Keep the
+file at the same path and use the same browser profile. Moving or renaming it,
+using private browsing, changing browsers, or clearing browser data can make
+the saved workspace unavailable. File-based storage varies between browsers.
+
+Back up regularly: click Your desk. Your data. in the sidebar, then Back up
+workspace as JSON. Keep that downloaded JSON file somewhere safe. Restore it
+through Add to your library. Markdown exports are readable briefs; JSON backups
+preserve the complete workspace.
+
+If saving fails, the app warns that your work is in memory. Export a JSON backup
+BEFORE closing. Storage is not encrypted, synced, or automatically backed up.
+Documents are never uploaded to another service.
+
+VALIDATION AND LIMITS
+
+The exact standalone HTML is tested in Chromium on Linux without a development
+server or sibling assets. Desktop import, search, exact citations, notes,
+persistence, exports, and backup/restore are checked. The managed test browser
+blocks file:// URLs, so direct opening through the file manager is not verified
+here. Firefox and your browser profile have not been independently tested.
+If opening the file fails, report your browser and error; do not install npm.
+
+Developer tools are only needed for changing the source, not using this app.

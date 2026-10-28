@@ -22,7 +22,10 @@ document.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = icon(el.
 // Draw arrows as vectors; minimal Linux font sets do not always include ↗.
 const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
 const arrowTextNodes = [];
-while (textWalker.nextNode()) if (textWalker.currentNode.textContent.includes('↗')) arrowTextNodes.push(textWalker.currentNode);
+while (textWalker.nextNode()) {
+  const node = textWalker.currentNode;
+  if (!node.parentElement.closest('script, style, textarea') && node.textContent.includes('↗')) arrowTextNodes.push(node);
+}
 for (const node of arrowTextNodes) {
   const fragment = document.createDocumentFragment();
   node.textContent.split('↗').forEach((text, i) => {

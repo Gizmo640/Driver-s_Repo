@@ -1,55 +1,52 @@
-# Commonplace
+# Commonplace — Linux desktop edition
 
-A private research desk by Driver. Import your material, search it, follow shared language, and collect verbatim quotes into a brief with source references.
+A private research desk. Read your documents, save exact passages with their sources, add notes, and export a brief.
 
-**[Download the portable app](artifacts/Commonplace-portable.zip)** · [Single-file edition](artifacts/Commonplace.html) · [Start guide](PORTABLE-README.txt)
+## Open it on your Linux desktop
 
-![Commonplace research workspace](artifacts/commonplace-desktop.png)
+**You need only your existing, current web browser with JavaScript enabled. No npm, Node.js, Python, terminal commands, package installation, or server is required to use the app.**
 
-## Run
+1. **[Download Commonplace-portable.zip](https://github.com/Gizmo640/Driver-s_Repo/raw/refs/heads/main/artifacts/Commonplace-portable.zip)** and extract it using your file manager.
+2. Put the extracted `Commonplace` folder somewhere permanent, such as `Documents/Commonplace`.
+3. In your browser, press **Ctrl+O**, choose **`Commonplace.html`** from that folder, and open it. You can also right-click the file in your file manager and choose **Open With → your web browser**.
+4. Bookmark the page if you want a quick way back. Internet access is not needed after downloading the app.
 
-**Portable edition: no installation.** Extract `Commonplace-portable.zip` and open `Commonplace.html` in a current browser. Everything is included. See [the portable guide](PORTABLE-README.txt) for storage and backup details.
+**If you already cloned or downloaded this repository:** open **`artifacts/Commonplace.html`** in your browser. It is already built and committed. Do not open the root `index.html`; that is a development source file, not the standalone app. Do not run a build command to use the portable edition.
 
-**Development server:** requires Node.js 20 or newer. No package dependencies, install step, API keys, build step, or external services.
+The ZIP contains the application and `START-HERE.txt`. All code, styling, icons, illustrations, and sample documents are included in the HTML file. Nothing is fetched from another service. Your operating system and browser are the only prerequisites; they are not bundled.
 
-For a portable edition, run `npm run build`, then open `artifacts/Commonplace.html` directly in a browser. It contains the entire application and sample library, with no external assets. This file has its own browser storage origin; use a workspace JSON backup to move data between editions. If the browser restricts storage for local files, export a backup before closing.
+![Commonplace on a Linux desktop browser](artifacts/commonplace-desktop.png)
 
-```sh
-npm start
-```
+## Use it with your own documents
 
-Open port **3000** with your environment's port viewer, or `http://localhost:3000` when running locally. Set `PORT` to use another port. The development server listens on all interfaces; it has no authentication and should not be exposed as a public production service. Source documents are held by the browser, not the server.
+1. Click **Add to your library**, or drag files from your Linux file manager onto the page. Supported formats: UTF-8 TXT, Markdown, CSV, and JSON. PDF is not supported.
+2. Search for a phrase you know appears in a document. Put an exact phrase in double quotes. Separate search terms must all appear in a source.
+3. Open a source and click **＋** beside a passage. Its exact text, title, author, and original line numbers are saved together.
+4. Open **Your brief** and type your own note. Click the source title to return to the quoted paragraph.
+5. Click **Export Markdown** to save the brief in your browser's download folder. Your notes are kept separate from the source's words.
 
-```sh
-npm test
-```
+Keyboard: **/** or **Ctrl+K** searches; **Escape** closes a source. The workspace supports desktop mouse and keyboard use. Save, reorder, and export actions can also be reached with Tab.
 
-## Try the workflow
+The nine starter sources are **fictional samples**, labeled in the app. Related-source suggestions show shared words; they are lexical comparisons, not AI conclusions or verification that sources agree.
 
-1. Open **The city after dark** in the sample library. All nine sample documents are fictional, explicitly labeled, and written for this demo.
-2. Press **＋** beside a passage. Open **Your brief**, add your interpretation, and use the source title to jump back to the original paragraph.
-3. Search for `"public space" library`. All terms must appear; quoted phrases match exactly. Matches include original line references.
-4. Open a source's **Follow a thread** suggestions. Shared terms explain why another document appeared. Suggestions measure lexical overlap with TF-IDF cosine similarity; they are not AI interpretations or claims that sources agree.
-5. Add your own UTF-8 TXT, Markdown, CSV, or JSON by file picker or drag and drop. Files stay in this browser. Maximum 2 MB per source and 8 MB total source text, subject to browser storage limits. CSV and JSON are read as source text, not spreadsheet visualizations. PDF is not supported.
-6. Export your brief as Markdown. Quotes, personal notes, titles, authors, filenames, and original line references are kept distinct.
-7. Open **Your desk. Your data.** and download a workspace backup. Import that JSON to merge documents, notes, and quote order back into a workspace. Re-importing an unchanged backup skips existing documents and passages.
+## Keep your work safe
 
-Keyboard: **/** or **Ctrl/Cmd K** focuses search. **Escape** closes a reader. All paragraph-save, collection, reorder, and export actions are keyboard accessible. Grid and list layouts are available.
+Your documents and notes are saved in this browser's local storage, not inside the HTML file. Keep the HTML file at the same path and use the same browser profile. Renaming or moving it, switching browsers, using private browsing, or clearing browser data can make that saved workspace unavailable. Local-file storage behavior varies by browser.
 
-## Data and privacy
+**Back up important work:** click **Your desk. Your data.** in the sidebar, then **Back up workspace as JSON**. Save the downloaded backup somewhere safe. To restore it, use **Add to your library** and select the backup JSON. Restore merges sources and passages; re-importing an unchanged backup skips existing items.
 
-Data uses the browser's `localStorage`, scoped to this origin. This is not encryption, cloud sync, or automatic backup. A different browser or port has a separate workspace. Clearing browser data removes the local copy. Export important work. If saving fails, an explicit warning appears; the current session stays in memory and the app warns before navigation.
+If browser storage is restricted or full, the app warns that changes are in memory. Export a backup before closing. Local storage is not encrypted, cloud sync, or automatic backup. Source text is limited to 2 MB per file and 8 MB total, subject to your browser's storage limit. Small libraries are best for a modest computer.
 
-Removing a source preserves already saved quotes, notes, and citation snapshots. Missing originals are marked in the brief. Source removal and quote removal offer a ten-second undo. Markdown is displayed as escaped text with headings and preserved paragraphs; raw HTML never executes. Imported sources are not sent to any third-party service. The application makes no external network requests.
+Removing a source preserves its saved quotes and notes; the missing original is marked in the brief. Source and quote removals offer a ten-second undo. Raw HTML in imported documents is displayed as text rather than executed.
 
-## Implementation
+## What was verified
 
-- Native ES modules and CSS; dependency-free Node static server.
-- `model.js`: paragraph coordinates, literal full-text search, safe highlighting, TF-IDF similarity, import validation, citation snapshots, and Markdown export.
-- `sample-data.js`: the clearly labeled fictional collection.
-- `app.js`: browser storage, backup merge, document reader, quote collection, notes, drag-and-drop, and UI.
-- `tests/`: source accuracy, search, similarity, import safety, backup validation, exports, and server behavior.
+The primary desktop workflow is tested in **Chromium on Linux**, using the exact standalone HTML without a development server or sibling files: imports, search, saving quotes, source line accuracy, notes, reload persistence, Markdown export, backup/restore, keyboard navigation, and safe handling of imported HTML.
 
-End-to-end browser checks: with the app running, execute `python3 tests/browser.py`. This optional check requires Python Playwright and a system Chromium at `/usr/bin/chromium`, both available in the prepared cloud environment. It tests the full workflow and saves desktop, reader, brief, and phone screenshots under `artifacts/`.
+This managed test browser blocks `file://` navigation by policy. The standalone file is therefore supplied at an intercepted local test URL, with no server process. Direct opening from the Linux file manager remains **unverified here**, as do Firefox and your particular browser profile. The app does not require a server; this is a limit on the test environment. If you encounter a file-opening error, report your browser and the exact error instead of installing developer tools.
 
-There is no language model integration. Every “connection” is a reproducible comparison of document vocabulary. A person supplies the interpretation.
+There are also model/server tests and secondary small-screen layout checks. They are developer checks, not steps you need to perform to use the app.
+
+## Working on the code
+
+Optional development and test instructions are in **[DEVELOPING.md](DEVELOPING.md)**. They are separate from running the already-built Linux desktop app.
