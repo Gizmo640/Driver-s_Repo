@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+test-results/
+artifacts/*
+!artifacts/Commonplace.html
+!artifacts/Commonplace-portable.zip
+!artifacts/commonplace-desktop.png

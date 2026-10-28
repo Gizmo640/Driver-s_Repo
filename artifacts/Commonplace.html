@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f3ec"><meta name="description" content="A quieter place for a curious mind. Import documents, follow connections, and collect quotes with their sources. Private, local, and ready to use."><title>Commonplace — a research desk by Driver</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2210%22%20fill%3D%22%23435b45%22%2F%3E%3Cpath%20d%3D%22M27%2012a12%2012%200%201%200%200%2017%22%20fill%3D%22none%22%20stroke%3D%22%23f0f1df%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M24%209h8v8m0-8-10%2010%22%20fill%3D%22none%22%20stroke%3D%22%23c1d2a2%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E%0A"><style>:root{--paper:#f7f6f0;--sidebar:#efeee6;--ink:#303c33;--muted:#82877b;--line:#e1e2d7;--green:#435b45;--sage:#dbe1cd;--orange:#c06b42;--serif:Georgia,'Times New Roman',serif;--sans:Inter,'Segoe UI',Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);font:13px var(--sans);color:var(--ink)}button,input,select,textarea{font:inherit;color:inherit}button,select,summary{cursor:pointer}button{transition:background .15s,color .15s,border-color .15s}button:active{transform:translateY(1px)}button,a,input,select,textarea{ -webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--green);outline-offset:4px}button:hover{filter:brightness(.96)}button:disabled{opacity:.45;cursor:default}a{color:inherit;text-decoration:none}input,select,textarea{min-width:0}button svg,.breadcrumbs svg,.search-row>span svg,.privacy-note svg{width:17px;height:17px;display:block;stroke-width:1.5}svg{fill:none;stroke:currentColor}button>span[data-icon]{display:flex}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}mark{background:#e4df9e;color:inherit;padding:0 1px;border-radius:2px}kbd{font:10px var(--mono);border:1px solid #d9dccf;border-bottom-width:2px;background:#f5f5ee;padding:3px 5px;border-radius:4px}
+.sidebar{position:fixed;inset:0 auto 0 0;width:249px;background:var(--sidebar);border-right:1px solid var(--line);padding:33px 23px 0;display:flex;flex-direction:column;z-index:3;overflow:auto}.brand{display:flex;align-items:center;gap:10px;font:24px var(--serif);letter-spacing:-1.1px}.brand-symbol{width:32px;height:35px;display:block;border:1.5px solid var(--green);border-radius:15px 15px 4px 4px;font:35px/29px var(--serif);font-style:italic;text-align:center;color:var(--green);position:relative}.brand-symbol>span{font:15px var(--sans);position:absolute;right:-6px;top:-5px;background:var(--sidebar);padding-left:2px}.brand small{display:block;font:6.4px var(--mono);letter-spacing:1.2px;color:#79806e;margin-top:5px;margin-left:1px}.import-button{margin:36px 0 32px;width:100%;background:var(--green);color:#f7f7ed;border:0;border-radius:6px;padding:12px 13px;display:flex;align-items:center;gap:8px;font-size:11px}.import-button>span{font-size:18px;font-weight:300;line-height:17px}.import-button kbd{margin-left:auto;color:#e1e8d3;border-color:#6e8066;background:#526a4e;font-size:9px;line-height:12px;padding:0 4px}.side-label{font:8px var(--mono);letter-spacing:1.5px;color:#8a8f7f;margin:0 9px 12px;display:flex;justify-content:space-between}.main-nav,.collections{display:flex;flex-direction:column;gap:5px}.main-nav button,.collections button{display:flex;align-items:center;width:100%;border:0;background:transparent;border-radius:5px;padding:11px 10px;font-size:11px;text-align:left;color:#777e6c;gap:10px}.main-nav button.active{background:#e0e5d5;color:#3c523a}.main-nav button svg{width:16px;height:16px}.nav-count{margin-left:auto;font:9px var(--mono);background:#e8e9de;border:1px solid #d7dccb;border-radius:4px;min-width:22px;padding:2px 4px;text-align:center}.main-nav button.active .nav-count{background:#d0d9c1;border-color:#c7d1b8;color:#435a3d}.collection-label{margin-top:35px;align-items:center}.collection-label>span{font-size:16px;color:#a1a594}.collections{gap:3px}.collections button{font-size:10px;padding:10px 10px;gap:10px}.collections button.active{color:#3e523a;background:#e6e8dc}.collections button>span{margin-left:auto;font:9px var(--mono);color:#939985}.collection-dot{width:7px;height:7px;background:#647d52;border-radius:2px;flex-shrink:0}.collection-dot.culture{background:#a68c69}.collection-dot.design{background:#9eaa86}.collection-dot.research{background:#a6b1b7}.collection-dot.imported{background:transparent;border:1px solid #9da88c}.sidebar-bottom{margin-top:auto;padding-top:35px}.desk-note{padding:15px 10px 29px;color:#838b74}.desk-note>span{font-size:24px;color:#889871;display:block;margin-bottom:12px}.desk-note p{font:16px/1.5 var(--serif);margin:0 0 11px;max-width:172px;font-style:italic;letter-spacing:-.2px}.desk-note small{font:6px var(--mono);letter-spacing:1px;color:#969c88}.privacy-note{display:flex;align-items:center;gap:9px;border:0;background:transparent;padding:18px 4px;width:100%;border-top:1px solid #dcded0;text-align:left;font-size:10px;color:#717e65}.privacy-note>span:first-child{background:#e3e8d9;border:1px solid #d3dac7;border-radius:5px;padding:7px;color:#637656}.privacy-note svg{width:14px;height:14px}.privacy-note small{display:block;font-size:8px;color:#919984;margin-top:4px}.privacy-note>span:last-child{margin-left:auto;font-size:14px;color:#879779}.sidebar-signature{border-top:1px solid #dcded0;display:flex;gap:10px;align-items:center;padding:20px 0;font-size:9px;color:#747d67}.sidebar-signature small{display:block;font:6px var(--mono);letter-spacing:1px;margin-top:5px;color:#969c8a}.avatar{width:29px;height:29px;border-radius:50%;background:#dfe4d5;border:1px solid #d3dbc8;display:flex;align-items:center;justify-content:center;font:12px var(--serif);color:#5b6d4b}.main-shell{margin-left:249px}.topbar{height:77px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 47px}.breadcrumbs{display:flex;gap:15px;align-items:center;font-size:10px;color:#858b7c}.breadcrumbs>span:last-child{color:#4e5c46}.breadcrumbs svg{width:14px;height:14px;color:#859078}.topbar-right{display:flex;align-items:center;gap:22px}.local-status{display:flex;align-items:center;gap:6px;color:#8b9280;font-size:9px}.local-status i{width:5px;height:5px;background:#8d9c70;border-radius:50%}.icon-button{background:transparent;border:1px solid #dce0d1;border-radius:50%;width:23px;height:23px;display:flex;align-items:center;justify-content:center;font:12px var(--serif);color:#858e77}.topbar .avatar{width:28px;height:28px}#main-content{max-width:1400px;padding:0 47px;margin:0 auto}.hero{display:flex;align-items:center;justify-content:space-between;padding:45px 0 35px;gap:30px}.eyebrow{font:7px var(--mono);letter-spacing:1.7px;color:#8b927b;display:flex;align-items:center;gap:7px}.eyebrow>span:not([class]){height:5px;width:5px;background:#8a9e6b;display:inline-block;border-radius:50%}h1{font:65px/1.02 var(--serif);letter-spacing:-2.8px;font-weight:400;margin:22px 0 17px;position:relative;width:max-content}h1 em{font-weight:400;color:#73815a}h1>svg{position:absolute;right:-2px;bottom:-9px;width:150px;height:12px;stroke:#a4ac87;stroke-width:1.4}.hero p,.brief-hero p{font-size:11px;line-height:1.9;color:#868d7c;margin:0}.hero-art{width:265px;min-width:230px;height:236px;position:relative;margin-right:7px;margin-top:20px}.art-label{position:absolute;top:0;right:20px;font:6px/1.8 var(--mono);letter-spacing:1.6px;color:#919a80;transform:rotate(5deg)}.paper{position:absolute;box-shadow:0 10px 30px #39422c12;border:1px solid #d6dac8;border-radius:2px;width:125px;height:157px;background:#f6f5e9}.paper-back{top:39px;left:35px;transform:rotate(-14deg);background:#e4e8d6;display:flex;flex-direction:column;gap:9px;padding:25px 18px}.paper-back div{height:1px;background:#bdc7a7;width:85%}.paper-back div:last-child{width:60%}.paper-front{top:57px;left:104px;transform:rotate(10deg);padding:18px}.paper-front>span{font-size:29px;color:#71845b;display:block;margin-bottom:12px}.paper-front i{display:block;height:1px;background:#b8c2a5;margin-top:8px}.paper-front i:nth-of-type(2){width:85%}.paper-front i:nth-of-type(3){width:65%}.paper-front small{font:6px var(--serif);font-style:italic;color:#8b977b;display:block;margin-top:19px}.art-thread{position:absolute;inset:20px 0 0;width:260px;height:190px;stroke:#b29166;stroke-width:1.3;pointer-events:none}.art-caption{position:absolute;bottom:0;left:52px;font:5.5px var(--mono);letter-spacing:1.9px;color:#8f987f}.search-row{height:49px;border:1px solid #daddcf;border-radius:7px;background:#fbfaf5;display:flex;align-items:center;padding:0 15px;gap:12px;box-shadow:0 2px 3px #37432a03}.search-row>span{color:#959d85}.search-row input{flex:1;width:0;font-size:11px;outline:none!important;border:0;background:transparent;padding:12px 0;color:var(--ink)}.search-row:focus-within{border-color:#94a07d;box-shadow:0 0 0 3px #7d90650e}.search-row input::placeholder{color:#969c89}.search-row input::-webkit-search-cancel-button{display:none}.search-row kbd{font-size:10px;padding:2px 6px;color:#919980;border:1px solid #e2e4d8;background:#f4f5ed}.clear-search{background:none;border:0;color:#89947b;font-size:20px}.library-heading{display:flex;justify-content:space-between;align-items:center;padding:30px 0 21px}.library-heading>div:first-child{display:flex;gap:12px;align-items:center}.library-heading h2{font:21px var(--serif);letter-spacing:-.4px;margin:0;font-weight:400}.library-heading>div>span{font:8px var(--mono);color:#8a927d;padding:4px 6px;background:#e9ecdf;border:1px solid #e0e4d5;border-radius:4px}.library-actions{display:flex;align-items:center;gap:16px}.library-actions select{background:none;border:0;font-size:9px;color:#7e8970;outline:none;padding:5px 14px 5px 3px}.view-switch{display:flex;border:1px solid #dcdfd1;border-radius:4px;padding:3px;gap:1px}.view-switch button{background:none;border:0;border-radius:2px;padding:4px;color:#9ca58c}.view-switch button.active{background:#e6eadb;color:#65764e}.view-switch svg{height:12px;width:12px;stroke-width:1.5}.library-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:21px 19px}.source-card{background:#fbfaf5;border:1px solid #e0e2d6;border-radius:7px;overflow:hidden;position:relative;box-shadow:0 2px 2px #37432a02;transition:transform .2s,border-color .2s,box-shadow .2s}.source-card:hover{transform:translateY(-3px);border-color:#bfc9af;box-shadow:0 7px 16px #37432a09}.card-open{position:absolute;inset:0;z-index:1;border:0;background:transparent!important;padding:0;border-radius:6px}.card-open:focus-visible{outline-offset:-3px}.card-open:hover{filter:none}.cover{height:151px;position:relative;overflow:hidden;background:#dfe3d3}.cover svg{width:100%;height:100%;stroke:none;display:block}.cover:after{content:"";position:absolute;inset:0;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23808080' filter='url(%23n)' opacity='.6' d='M0 0h180v180H0z'/%3E%3C/svg%3E");mix-blend-mode:multiply;pointer-events:none}.cover-type{position:absolute;top:12px;left:12px;z-index:1;font:6px var(--mono);letter-spacing:1px;color:#eef0dc;background:#334c3d50;border:1px solid #f4f3dd33;border-radius:3px;padding:5px 6px}.cover-number{position:absolute;bottom:12px;right:12px;color:#f2f1dc99;font:7px var(--mono);z-index:1}.card-content{padding:16px 15px 12px}.card-category{display:flex;align-items:center;gap:5px;font:6px var(--mono);letter-spacing:1px;text-transform:uppercase;color:#929a81;margin-bottom:10px}.card-category i{width:4px;height:4px;border-radius:50%;background:#9aa880}.card-content h3{font:19px/1.2 var(--serif);letter-spacing:-.45px;margin:0 0 9px;font-weight:400;min-height:23px}.card-content>p{font-size:9px;color:#929885;line-height:1.7;margin:0 0 13px;height:30px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.card-meta{display:flex;align-items:center;justify-content:space-between;color:#939b86;font-size:8px;padding-bottom:13px;border-bottom:1px solid #e5e7dc}.card-meta>span:first-child{display:flex;align-items:center;gap:6px}.author-dot{background:#e6eadb;width:17px;height:17px;display:flex;align-items:center;justify-content:center;border:1px solid #d9e0ca;color:#83916f;font-size:7px;border-radius:50%;font-family:var(--serif);font-style:normal}.card-bottom{display:flex;align-items:center;gap:5px;padding-top:12px;min-height:26px}.tag{font-size:7px;color:#828f72;padding:3px 6px;background:#edf0e4;border:1px solid #e2e6d6;border-radius:3px;white-space:nowrap}.card-bottom>span:last-child{margin-left:auto;color:#8e9c7a;font-size:13px}.search-snippet{padding:10px 15px;border-top:1px dashed #dce0d2;font-size:10px;line-height:1.7;color:#6c7b5c;background:#f1f3e9}.search-snippet small{display:block;font:7px var(--mono);color:#929c81;margin-bottom:4px}.search-summary{font-size:10px;color:#7d886e;margin:-5px 0 19px}.library-footnote{display:flex;gap:9px;align-items:center;margin:25px 0;color:#9aa28b}.library-footnote>span{font-size:17px;color:#96a57e}.library-footnote p{font-size:8px;line-height:1.6;flex:1;margin:0}.library-footnote strong{font-weight:400;color:#808e6f}.library-footnote button{background:none;border:0;font-size:8px;color:#879575;text-decoration:underline;text-underline-offset:3px}.main-footer{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:22px 0 25px;font:6px var(--mono);letter-spacing:1.5px;color:#939b84;margin-top:26px}.main-footer>span:last-child{display:flex;align-items:center;gap:12px}.main-footer i{font-style:normal;font-size:11px;color:#7f9169}.library-grid.list-layout{grid-template-columns:1fr;gap:10px}.list-layout .source-card{display:grid;grid-template-columns:135px 1fr}.list-layout .cover{height:100%;min-height:144px}.list-layout .card-content{padding:15px 20px}.list-layout .card-content>p{height:auto;display:block;margin-bottom:10px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.list-layout .card-category{margin-bottom:6px}.list-layout .card-content h3{font-size:22px;margin-bottom:6px}.list-layout .card-meta{padding-bottom:0;border:none;justify-content:flex-start;gap:15px}.list-layout .card-bottom{position:absolute;right:18px;bottom:14px;gap:5px}.list-layout .card-bottom>span:last-child{display:none}.list-layout .search-snippet{grid-column:1/-1}.empty-state{text-align:center;padding:65px 20px;color:#7b896c}.empty-state>span{display:block;margin:0 auto 20px}.empty-state svg{width:30px;height:30px;stroke-width:1;display:block;margin:auto}.empty-state h3{font:28px var(--serif);letter-spacing:-.6px;color:#546546;margin:0 0 14px}.empty-state p{font-size:11px;line-height:1.9;color:#8a947c;margin:0 0 20px}.secondary-button{background:#f3f4e9;border:1px solid #d6ddc7;border-radius:5px;padding:11px 15px;font-size:10px;color:#65784f}.primary-button{display:flex;gap:9px;align-items:center;background:var(--green);color:#f6f6ea;border:1px solid var(--green);border-radius:5px;padding:13px 15px;font-size:11px}.primary-button svg{width:14px;height:14px}.brief-hero{padding-top:50px;padding-bottom:30px}.brief-hero h1{font-size:58px;margin:21px 0}.brief-toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid #dce0d1;background:#fbfaf5;border-radius:6px;padding:20px}.brief-toolbar>div{flex:1}.brief-toolbar label{font:7px var(--mono);letter-spacing:1.2px;color:#919c7f;display:block;margin-bottom:7px}.brief-toolbar input{border:0;background:none;width:100%;font:21px var(--serif);color:#4e6243;padding:3px 0;outline:none}.brief-pins{display:flex;flex-direction:column;gap:18px;margin-top:25px}.pin-card{background:#fbfaf5;border:1px solid #dfe3d4;border-radius:7px;padding:23px 25px;position:relative}.pin-header{display:flex;align-items:center;gap:10px}.pin-number{font:9px var(--mono);color:#9aa788;padding:5px 6px;background:#eef1e4;border:1px solid #dce3cf;border-radius:3px}.pin-source{font-size:10px;color:#6d7f5b;background:none;border:0;padding:0;text-align:left}.pin-location{font:7px var(--mono);color:#9aa588;margin-top:5px}.pin-remove{margin-left:auto;align-self:flex-start;background:none;border:0;color:#96a087;font-size:17px;padding:1px 3px}.pin-card blockquote{font:20px/1.6 var(--serif);color:#516245;border-left:2px solid #a9b591;padding-left:18px;margin:20px 0;white-space:pre-wrap;overflow-wrap:anywhere}.pin-card label{font:7px var(--mono);letter-spacing:1px;color:#909e7e;display:block;margin-bottom:8px}.pin-card textarea{width:100%;border:1px solid #e0e4d4;background:#f4f5eb;border-radius:4px;min-height:68px;resize:vertical;padding:11px 12px;font-size:11px;line-height:1.7;color:#60714f}.pin-card textarea::placeholder{color:#a2ad92}.pin-actions{margin-top:14px;display:flex;gap:15px;align-items:center}.pin-actions button{font-size:9px;background:none;border:0;padding:3px 0;color:#82936c}.pin-missing{font-size:8px;color:#aa8455}.reader{position:fixed;inset:24px 24px 24px auto;margin:0;width:min(980px,calc(100vw - 48px));height:calc(100dvh - 48px);max-height:none;max-width:none;overflow:hidden;padding:0;border:1px solid #d8decb;border-radius:10px;background:var(--paper);color:var(--ink);box-shadow:0 20px 100px #1e2d2440}.reader::backdrop,.about-dialog::backdrop{background:#27372960;backdrop-filter:blur(4px)}.reader-top{height:59px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:#f1f2e7}.reader-top>div{display:flex;align-items:center;gap:9px;font:8px var(--mono);letter-spacing:1px;color:#82916d}.reader-top svg{width:15px;height:15px}.sample-badge{font:6px var(--mono);padding:4px 5px;background:#e8e6d6;border:1px solid #d8d8c2;color:#a08e5c;border-radius:3px;margin-left:10px}.reader-top .icon-button,.dialog-top .icon-button{font:21px var(--sans);width:27px;height:27px}.reader-layout{display:grid;grid-template-columns:minmax(0,1fr) 243px;height:calc(100% - 59px)}.reader-article{padding:39px 40px 20px;overflow:auto;scrollbar-width:thin;scrollbar-color:#bdc8ab transparent}.reader-tags{display:flex;gap:7px;margin-bottom:16px}.reader-article>h2{font:42px/1.08 var(--serif);letter-spacing:-1.2px;margin:0 0 19px;font-weight:400;overflow-wrap:anywhere}.reader-meta{font-size:10px;color:#8b997a;display:flex;gap:10px;flex-wrap:wrap}.reader-meta>span{border-right:1px solid #d5ddc8;padding-right:10px}.reader-meta>span:last-child{border:none}.reader-instruction{display:flex;align-items:center;gap:8px;border-top:1px solid #dee3d3;border-bottom:1px solid #dee3d3;padding:13px 0;font-size:9px;color:#909e7d;margin:26px 0}.reader-instruction svg{width:13px;height:13px;stroke-width:1.5}.reader-instruction strong{font-size:12px;color:#66814f}.reader-body{padding-bottom:25px}.source-paragraph{position:relative;padding:0 28px 0 0;margin:0 0 19px;overflow-wrap:anywhere}.source-paragraph p{font:16px/1.85 var(--serif);color:#626f55;margin:0;white-space:pre-wrap}.source-paragraph:hover p{color:#3d5334}.source-paragraph>button{position:absolute;right:-9px;top:1px;width:23px;height:23px;border:1px solid #d5ddc7;background:#edf1e1;border-radius:4px;color:#82986a;font-size:16px;opacity:.25}.source-paragraph:hover>button,.source-paragraph:focus-within>button,.source-paragraph>button[aria-pressed=true]{opacity:1}.source-paragraph>button[aria-pressed=true]{background:#dce7cd;color:#4d6b36}.reader-body h3{font:22px var(--serif);color:#4e6641;margin:31px 0 15px;letter-spacing:-.4px;font-weight:400}.reader-body>h3:first-child{display:none}.source-paragraph .line-label{position:absolute;font:6px var(--mono);color:#a4b196;left:-24px;top:7px;user-select:none}.reader-bottom{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid #dfe4d3;gap:20px}.reader-bottom>span{font:7px var(--mono);color:#98a28b;overflow-wrap:anywhere}.text-button{border:0;background:none;font-size:9px;color:#9b896d;white-space:nowrap}.reader-aside{background:#eff1e6;border-left:1px solid #dfe3d3;padding:36px 20px;overflow:auto}.reader-aside>.eyebrow{font-size:7px;letter-spacing:1.2px;display:flex;justify-content:space-between}.reader-aside>.eyebrow>span{background:none;font:14px var(--sans);height:auto;width:auto}.reader-aside>p{font-size:9px;color:#93a080;margin:10px 0 24px;line-height:1.6}.related-card{padding:15px 0;border-top:1px solid #d8dfc9;position:relative}.related-card button{position:absolute;inset:0;border:0;background:transparent;width:100%}.related-card small{font:6px var(--mono);letter-spacing:1px;color:#94a182;text-transform:uppercase}.related-card h4{font:19px/1.2 var(--serif);letter-spacing:-.4px;color:#62774f;margin:9px 0 10px;font-weight:400}.related-card p{font-size:8px;line-height:1.7;color:#92a17d;margin:0}.related-card p strong{font-weight:400;color:#6d8756}.connection-note{border-top:1px solid #d8dfc9;padding-top:18px;margin-top:12px}.connection-note>span{font-size:19px;color:#8da26e}.connection-note p{font-size:9px;line-height:1.9;color:#95a37f}.reader-brief-link{margin-top:30px;border:1px solid #cfd8bd;background:#e7ecd9;padding:14px;border-radius:4px;font-size:8px;color:#879b6f}.reader-brief-link button{display:block;font-size:10px;margin-top:10px;border:0;background:none;padding:0;color:#607c48}.about-dialog{width:min(610px,calc(100vw - 36px));max-height:90dvh;border:1px solid #cdd6be;border-radius:9px;background:var(--paper);color:var(--ink);padding:26px 32px;box-shadow:0 20px 100px #1e2d2440;overflow:auto}.dialog-top{display:flex;align-items:center;justify-content:space-between}.about-dialog h2{font:43px/1.12 var(--serif);letter-spacing:-1.4px;margin:22px 0}.about-dialog h2 em{color:#7c8d61}.about-dialog>p{font-size:11px;line-height:1.9;color:#899579}.about-features{display:grid;grid-template-columns:1fr 1fr;gap:23px;margin-top:27px;padding-top:23px;border-top:1px solid #dce2d0}.about-features svg{width:20px;height:20px;stroke-width:1.3;color:#94a47c}.about-features strong{font-size:11px;font-weight:500;display:block;margin-top:10px;color:#687e52}.about-features p{font-size:10px;line-height:1.85;color:#8f9c7d;margin-bottom:0}.shortcut-row{display:flex;justify-content:space-between;gap:15px;margin:25px 0;padding-top:23px;border-top:1px solid #dce2d0;font-size:8px;color:#95a382}.shortcut-row kbd{font-size:8px;margin-right:4px;background:#f1f3e7}.about-dialog .about-small{font-size:9px;margin-top:17px}.toast{position:fixed;bottom:25px;left:calc(50% + 90px);transform:translateX(-50%);z-index:100;background:#354f38;border:1px solid #56714f;color:#f0f3e7;border-radius:6px;box-shadow:0 5px 25px #233c2930;max-width:min(600px,90vw);padding:13px 20px;font-size:11px;line-height:1.7;display:flex;gap:16px;align-items:center}.toast button{color:#dbe9bf;background:none;border:0;text-decoration:underline;padding:2px;white-space:nowrap;font-size:10px}.drop-overlay{position:fixed;inset:12px;z-index:150;border:2px dashed #829b68;background:#f0f3e6f5;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;backdrop-filter:blur(6px)}.drop-overlay>span{font-size:50px;color:#8ca174}.drop-overlay h2{font:50px/1.1 var(--serif);color:#5f764d;letter-spacing:-1.5px}.drop-overlay p{font-size:12px;color:#94a280}.source-flash{animation:flash 1.8s ease-out}@keyframes flash{0%,30%{background:#e5eacb}100%{background:transparent}}
+@media(min-width:1500px){.sidebar{width:273px;padding:38px 26px 0}.main-shell{margin-left:273px}.topbar{padding:0 62px}#main-content{padding:0 62px}.hero{padding:54px 0 42px}h1{font-size:76px}.hero-art{margin-right:40px;transform:scale(1.1)}.cover{height:185px}.card-content{padding:19px 19px 15px}.card-content h3{font-size:23px}.card-content>p{font-size:10px;height:34px}.card-meta{font-size:9px}.tag{font-size:8px}.card-category{font-size:7px}.library-grid{gap:25px}.library-heading{padding:35px 0 24px}.brand{font-size:27px}}
+@media(max-width:1150px){.sidebar{width:220px;padding:28px 17px 0}.main-shell{margin-left:220px}.brand{font-size:22px;gap:9px}.brand-symbol{width:29px;height:32px;font-size:31px;line-height:27px}.brand small{font-size:5.5px}.topbar{padding:0 30px}#main-content{padding:0 30px}.hero{gap:10px;padding-top:35px}h1{font-size:58px}.hero-art{transform:scale(.85);transform-origin:right center;min-width:200px;width:200px;margin-right:0}.hero .eyebrow{font-size:6px;letter-spacing:1.2px}.cover{height:135px}.card-content{padding:13px 12px 11px}.card-content h3{font-size:18px;min-height:43px}.card-meta{font-size:7px}.card-bottom{gap:3px}.tag{font-size:6px;padding:3px 4px}.library-grid{gap:16px 13px}.collection-label{margin-top:28px}.desk-note{padding-left:7px}.reader{width:calc(100vw - 48px)}.reader-layout{grid-template-columns:minmax(0,1fr) 215px}.reader-article{padding:30px 34px}.reader-aside{padding:30px 16px}.reader-article>h2{font-size:37px}.toast{left:calc(50% + 50px)}}
+@media(max-width:930px){.hero-art{display:none}h1{font-size:66px}.hero{padding:37px 0 29px}.hero p{font-size:11px}.hero .eyebrow{font-size:7px}.library-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.cover{height:147px}.card-content h3{min-height:24px;font-size:20px}.card-content>p{font-size:9px}.tag{font-size:7px}.card-meta{font-size:8px}.library-heading>div:first-child{gap:7px}.library-heading h2{font-size:20px}.library-actions{gap:9px}.library-actions select{font-size:8px;padding-right:3px}.list-layout .card-bottom{display:none}.library-footnote{align-items:flex-start}.library-footnote button{white-space:nowrap;margin-top:2px}.sidebar-bottom{padding-top:15px}.desk-note p{font-size:15px}.brief-hero h1{font-size:50px}.brief-toolbar{flex-direction:column;align-items:stretch}.brief-toolbar input{font-size:22px}.brief-toolbar .primary-button{justify-content:center}.brief-toolbar label{margin-bottom:12px}}
+@media(max-width:700px){.sidebar{position:static;width:auto;padding:20px 21px 0;border-right:0;border-bottom:1px solid var(--line);overflow:visible;display:grid;grid-template-columns:1fr auto;gap:0 20px}.brand{font-size:25px}.brand-symbol{width:31px;height:33px;font-size:32px;line-height:28px}.brand small{font-size:6px}.import-button{margin:0;align-self:center;padding:10px 12px;font-size:10px;width:auto}.import-button kbd{display:none}.side-label,.collections,.sidebar-bottom{display:none}.main-nav{grid-column:1/-1;flex-direction:row;margin-top:20px;gap:15px}.main-nav button{width:auto;padding:11px 2px;border-radius:0;font-size:11px;gap:8px;color:#89957b;border-bottom:2px solid transparent}.main-nav button.active{background:none;border-bottom-color:#6a8453;color:#4e6740}.main-nav .nav-count{margin-left:2px;font-size:8px;min-width:19px;background:#e7eadc}.main-shell{margin-left:0}.topbar{height:49px;padding:0 22px}.topbar-right{gap:14px}.topbar .avatar{display:none}.local-status{font-size:8px}.breadcrumbs{font-size:9px;gap:12px}#main-content{padding:0 23px}.hero{padding:32px 0 30px}.hero .eyebrow{font-size:6px;letter-spacing:1.2px}h1{font-size:65px;margin-top:20px;margin-bottom:18px}.hero p{font-size:11px}.hero-art{display:block;transform:scale(.75);min-width:200px;margin-left:-30px;transform-origin:right center}.search-row{height:46px;padding:0 13px;gap:10px}.search-row input{font-size:10px}.library-heading{padding:27px 0 19px}.library-grid{gap:18px}.cover{height:155px}.card-content{padding:15px 14px 12px}.card-content h3{font-size:21px;min-height:25px}.card-category{font-size:6px}.library-heading h2{font-size:22px}.library-actions select{font-size:9px}.library-heading>div>span{font-size:7px}.view-switch button{padding:3px}.library-heading>div:first-child{gap:10px}.library-footnote p{font-size:8px}.library-footnote button{font-size:7px}.reader{inset:10px;width:calc(100vw - 20px);height:calc(100dvh - 20px);border-radius:7px}.reader-layout{display:block;overflow:auto}.reader-article{overflow:visible;padding:30px 31px 15px}.reader-article>h2{font-size:37px}.reader-aside{border-left:0;border-top:1px solid var(--line);padding:25px 30px;overflow:visible}.reader-aside>p{margin-bottom:15px}.reader-aside>.eyebrow{justify-content:flex-start;gap:12px}.related-card{padding:15px 0}.related-card h4{font-size:22px}.related-card p{font-size:9px}.reader-aside .connection-note{display:flex;align-items:flex-start;gap:13px;padding-top:15px}.connection-note p{font-size:9px;margin-top:0}.reader-brief-link{margin-top:15px}.reader-top{padding:0 18px;height:52px}.reader-layout{height:calc(100% - 52px)}.reader-top>div{font-size:7px;gap:7px}.sample-badge{font-size:5px;margin-left:3px;padding:4px}.source-paragraph>button{opacity:.7}.toast{left:50%;bottom:18px;max-width:calc(100vw - 35px);min-width:240px;font-size:10px;padding:11px 15px}.brief-hero{padding-top:32px}.brief-hero h1{font-size:52px}.brief-toolbar{flex-direction:row;align-items:center;padding:17px}.brief-toolbar input{font-size:20px}.brief-toolbar label{margin-bottom:7px}.brief-toolbar .primary-button{font-size:9px;padding:12px}.pin-card{padding:20px}.pin-card blockquote{font-size:19px}.main-footer{font-size:5px;letter-spacing:1px}}
+@media(max-width:490px){.sidebar{padding:20px 18px 0;gap:0 12px}.brand{font-size:23px}.brand-symbol{height:31px;width:28px;font-size:30px;line-height:26px}.brand small{font-size:5px;letter-spacing:1px}.import-button{font-size:9px;padding:9px 10px;gap:5px}.import-button>span{font-size:16px}.main-nav{margin-top:18px}.topbar{padding:0 19px}#main-content{padding:0 19px}.hero{padding:30px 0 27px}.hero-art{display:none}h1{font-size:65px;letter-spacing:-2.5px}.hero .eyebrow{font-size:5.9px;letter-spacing:1.1px}.hero p{font-size:10px}.search-row input{font-size:9px}.search-row{padding:0 11px;gap:9px}.search-row svg{width:14px;height:14px}.search-row kbd{font-size:9px}.library-heading{padding:24px 0 17px}.library-heading h2{font-size:21px}.library-heading>div:first-child{gap:7px}.library-heading>div>span{font-size:6px;padding:4px}.library-actions{gap:7px}.library-actions select{font-size:8px;width:99px}.view-switch{padding:2px}.view-switch button{padding:4px}.view-switch svg{width:10px;height:10px}.library-grid{gap:14px 11px}.cover{height:128px}.cover-type{font-size:5px;padding:4px;top:9px;left:9px}.cover-number{font-size:6px;right:9px;bottom:9px}.card-content{padding:12px 11px 10px}.card-category{font-size:5px;letter-spacing:.7px;margin-bottom:8px;gap:4px}.card-content h3{font-size:18px;letter-spacing:-.4px;min-height:44px;line-height:1.15;margin-bottom:7px}.card-content>p{font-size:8px;margin-bottom:9px;height:28px}.card-meta{font-size:6px;padding-bottom:10px}.card-meta>span:first-child{gap:4px}.author-dot{width:14px;height:14px;font-size:6px}.tag{font-size:5.8px;padding:3px 4px}.card-bottom{padding-top:10px;gap:3px}.card-bottom>span:last-child{font-size:11px}.card-bottom .tag:nth-of-type(2){max-width:72px;overflow:hidden;text-overflow:ellipsis}.library-footnote{margin:20px 0;gap:6px}.library-footnote p{font-size:7px}.library-footnote>span{font-size:14px}.library-footnote button{font-size:6px}.main-footer{font-size:4.7px;letter-spacing:.7px;padding:19px 0;margin-top:22px}.main-footer>span:last-child{gap:8px}.list-layout .source-card{grid-template-columns:90px 1fr}.list-layout .cover{min-height:132px}.list-layout .card-content{padding:13px 13px}.list-layout .card-content h3{font-size:20px;min-height:0}.list-layout .card-content>p{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;margin-top:10px}.list-layout .card-meta{font-size:7px;gap:12px}.brief-toolbar{flex-direction:column;align-items:stretch}.brief-toolbar input{font-size:23px}.brief-toolbar .primary-button{font-size:10px}.brief-hero h1{font-size:50px}.brief-hero p{font-size:10px}.brief-hero .eyebrow{font-size:6px;letter-spacing:1.3px}.pin-card blockquote{font-size:18px;padding-left:13px}.pin-card{padding:18px}.pin-header{gap:8px}.pin-source{font-size:9px}.pin-location{font-size:6px}.about-dialog{padding:22px}.about-dialog h2{font-size:36px}.about-features{gap:20px 15px}.about-features p{font-size:9px}.about-features strong{font-size:10px}.shortcut-row{gap:9px;flex-wrap:wrap}.reader-article{padding:27px 28px 15px}.reader-article>h2{font-size:34px}.source-paragraph p{font-size:15px}.source-paragraph{padding-right:20px}.source-paragraph .line-label{left:-18px;font-size:5px}.source-paragraph>button{right:-6px;width:21px;height:21px;font-size:14px}.reader-body h3{font-size:21px}.reader-instruction{font-size:8px;gap:5px}.reader-meta{font-size:9px}.reader-tags .tag{font-size:7px}.reader-aside{padding:24px 28px}.source-paragraph .line-label{top:8px}.drop-overlay h2{font-size:35px}.drop-overlay p{font-size:10px;max-width:230px;line-height:1.8}.search-snippet{font-size:8px;padding:9px 11px}}
+.inline-arrow{display:inline-flex;vertical-align:middle}.inline-arrow svg,.card-bottom>span:last-child svg,.pin-source svg{width:11px;height:11px;stroke-width:1.3;display:inline-block;vertical-align:middle}.brand-symbol .inline-arrow svg{width:12px;height:12px}.toast{top:auto;right:auto;margin:0;overflow:visible}.mobile-collection{display:none}.reader-brief-link button{display:flex;align-items:center;gap:8px}.source-paragraph .line-label{font-size:8px}.reader-meta{font-size:11px}.reader-aside>p,.connection-note p{font-size:10px}.reader-instruction{font-size:10px}.related-card p{font-size:10px}.reader-brief-link{font-size:10px}.reader-brief-link button{font-size:11px}.pin-location{font-size:9px}.pin-card label{font-size:9px}.pin-card textarea{font-size:12px}.card-content>p{color:#748066}.card-meta,.tag,.card-category{color:#748064}.hero p,.brief-hero p{color:#788568}.reader-meta,.reader-aside>p,.connection-note p,.reader-instruction{color:#758763}.related-card p{color:#7b8e66}.privacy-note small{color:#788a65}.search-row input::placeholder{color:#7e8b70}
+@media(min-width:701px){.main-nav button{font-size:12px}.collections button{font-size:11px}.card-content h3{font-size:22px}.card-content>p{font-size:11px;height:38px;line-height:1.7}.card-meta{font-size:10px}.tag{font-size:9px}.card-category{font-size:8px}.hero p,.brief-hero p{font-size:13px}.search-row input{font-size:12px}.card-meta .author-dot{font-size:9px}.library-footnote p,.library-footnote button{font-size:10px}.breadcrumbs,.local-status{font-size:11px}.library-actions select{font-size:11px}.side-label{font-size:9px}.sidebar-signature{font-size:10px}.sidebar-signature small{font-size:7px}.privacy-note{font-size:11px}.privacy-note small{font-size:9px}.import-button{font-size:12px}.hero .eyebrow{font-size:8px}.cover-type{font-size:8px}.cover-number{font-size:8px}.list-layout .card-content>p{height:auto}.list-layout .card-bottom .tag{font-size:8px}.source-paragraph p{font-size:17px}}
+@media(min-width:701px) and (max-width:1150px){.card-meta{font-size:8px}.tag{font-size:7px}.card-category{font-size:6px}.card-content h3{font-size:20px}.card-content>p{font-size:10px}.collections button{font-size:10px}.import-button{font-size:11px}.library-actions select{font-size:9px}.hero .eyebrow{font-size:7px}}
+@media(max-width:700px){.mobile-collection{display:flex;align-items:center;gap:12px;margin-top:16px}.mobile-collection label{font:7px var(--mono);letter-spacing:1px;color:#8a9877}.mobile-collection select{background:#eff1e5;border:1px solid #d9e0cc;padding:6px 10px;border-radius:4px;font-size:10px;color:#6d8158}.card-category{font-size:6px}.card-content>p{font-size:10px;height:34px}.card-meta{font-size:8px}.tag{font-size:7px}.card-content h3{font-size:20px}.library-heading{padding-top:20px}.card-meta>span:first-child{max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.source-paragraph .line-label{font-size:7px}.source-paragraph>button{opacity:1;width:27px;height:27px;right:-8px}.source-paragraph{padding-right:23px}.pin-location{font-size:8px}.reader-meta{font-size:10px}.toast{left:50%}.card-bottom .tag:nth-of-type(2){max-width:85px}}
+@media(max-width:400px){.card-meta{font-size:7px}.card-content h3{font-size:18px}.tag{font-size:6px}.card-content>p{font-size:9px;height:32px}.card-category{font-size:5.5px}.cover-type{font-size:6px}.cover-number{font-size:6px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style><script type="module">// All discovery is local and lexical. No network calls, embeddings, or generated claims.
+const MAX_FILE_BYTES = 2 * 1024 * 1024;
+const MAX_LIBRARY_BYTES = 8 * 1024 * 1024;
+const STORAGE_KEY = 'driver.commonplace.v1';
+const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+function tokens(text) { return String(text).toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? []; }
+function wordCount(text) { return tokens(text).length; }
+function readingTime(text) { return Math.max(1, Math.ceil(wordCount(text) / 220)); }
+function paragraphs(text) {
+  const lines = text.replace(/\r\n?/g, '\n').split('\n');
+  const result = [];
+  let buffer = [], start = 1;
+  const flush = () => { if (buffer.length) result.push({ text: buffer.join('\n'), line: start, endLine: start + buffer.length - 1, heading: /^#{1,6}\s/.test(buffer[0]) }); buffer = []; };
+  lines.forEach((line, i) => {
+    if (!line.trim()) { flush(); return; }
+    if (/^#{1,6}\s/.test(line)) { flush(); start = i + 1; buffer.push(line); flush(); return; }
+    if (!buffer.length) start = i + 1;
+    buffer.push(line);
+  });
+  flush(); return result;
+}
+function queryTerms(query) {
+  return [...query.matchAll(/"([^"]+)"|([^\s"]+)/g)].map(m => (m[1] || m[2]).toLowerCase()).filter(Boolean);
+}
+function searchDocuments(documents, query = '', collection = 'all', sort = 'recent') {
+  const terms = queryTerms(query);
+  return documents.filter(d => collection === 'all' || (collection === 'imported' ? !d.sample : d.collection === collection)).map(doc => {
+    const title = doc.title.toLowerCase(), tags = doc.tags.join(' ').toLowerCase();
+    const body = doc.content.toLowerCase(), haystack = `${title}\n${tags}\n${body}`;
+    if (!terms.every(term => haystack.includes(term))) return null;
+    const score = terms.reduce((sum, term) => sum + (title.includes(term) ? 12 : 0) + (tags.includes(term) ? 5 : 0) + Math.min(10, body.split(term).length - 1), 0);
+    const match = terms.length ? paragraphs(doc.content).find(p => !p.heading && terms.some(t => p.text.toLowerCase().includes(t))) : null;
+    return { doc, score, match };
+  }).filter(Boolean).sort((a, b) => {
+    if (terms.length && sort === 'relevance') return b.score - a.score || a.doc.title.localeCompare(b.doc.title);
+    if (sort === 'title') return a.doc.title.localeCompare(b.doc.title);
+    return new Date(b.doc.added) - new Date(a.doc.added) || a.doc.id.localeCompare(b.doc.id);
+  });
+}
+function highlight(text, query) {
+  const terms = queryTerms(query).sort((a, b) => b.length - a.length);
+  if (!terms.length) return escapeHTML(text);
+  const escaped = terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const regex = new RegExp(`(${escaped.join('|')})`, 'gi');
+  // Split raw text, then escape every part: imported HTML can never execute.
+  return String(text).split(regex).map((part, i) => i % 2 ? `<mark>${escapeHTML(part)}</mark>` : escapeHTML(part)).join('');
+}
+const stopwords = new Set('the a an and or but to of in on at for from by with as is are was were be been it its this that these those we our you your they their them he she his her not no can could would should will have has had do does did about into over more less than when where what which how who also one two some all each through between after before only there here so if then while very just same may most'.split(' '));
+function termFrequency(doc) {
+  const terms = tokens(`${doc.title} ${doc.title} ${doc.content}`).filter(t => t.length > 2 && !stopwords.has(t));
+  const freq = new Map();
+  terms.forEach(t => freq.set(t, (freq.get(t) ?? 0) + 1));
+  return freq;
+}
+function relatedDocuments(source, docs) {
+  const corpus = docs.map(doc => ({ doc, freq: termFrequency(doc) }));
+  const df = new Map();
+  for (const { freq } of corpus) for (const term of freq.keys()) df.set(term, (df.get(term) ?? 0) + 1);
+  const vector = freq => new Map([...freq].map(([term, n]) => [term, (1 + Math.log(n)) * (1 + Math.log((docs.length + 1) / ((df.get(term) ?? 0) + 1)))]));
+  const base = vector(termFrequency(source));
+  const norm = v => Math.sqrt([...v.values()].reduce((s, n) => s + n * n, 0));
+  const baseNorm = norm(base);
+  return corpus.filter(({ doc }) => doc.id !== source.id).map(({ doc, freq }) => {
+    const v = vector(freq);
+    const shared = [...base].filter(([term]) => v.has(term)).map(([term, weight]) => ({ term, weight: weight * v.get(term) })).sort((a, b) => b.weight - a.weight);
+    return { doc, score: baseNorm && norm(v) ? shared.reduce((s, t) => s + t.weight, 0) / (baseNorm * norm(v)) : 0, terms: shared.slice(0, 3).map(t => t.term) };
+  }).filter(r => r.score > 0).sort((a, b) => b.score - a.score).slice(0, 3);
+}
+function makePin(doc, paragraph, note = '') {
+  return { id: crypto.randomUUID(), docId: doc.id, title: doc.title, author: doc.author, filename: doc.filename ?? null, sample: doc.sample, line: paragraph.line, endLine: paragraph.endLine, quote: paragraph.text, note, created: new Date().toISOString() };
+}
+const md = text => String(text).replace(/[\\`*_{}\[\]<>#!|]/g, '\\$&');
+function exportBrief(title, pins) {
+  const header = `# ${md(title || 'Untitled research brief')}\n\nCollected in Commonplace. Quotes are verbatim source excerpts; notes are written by you.\n`;
+  return header + pins.map((p, i) => `\n## ${i + 1}. ${md(p.title)}\n\n${p.quote.split('\n').map(line => `> ${md(line)}`).join('\n')}\n\n${p.note ? `**Your note:** ${md(p.note)}\n\n` : ''}**Source:** ${md(p.author)} · ${p.filename ? `${md(p.filename)} · ` : ''}lines ${p.line}–${p.endLine}${p.sample ? ' · Fictional sample document' : ''}\n`).join('');
+}
+function importDocument(name, text, size = new TextEncoder().encode(text).length) {
+  if (size > MAX_FILE_BYTES || new TextEncoder().encode(text).length > MAX_FILE_BYTES) throw new Error(`${name}: the limit is 2 MB per file.`);
+  const extension = name.split('.').at(-1).toLowerCase();
+  if (!['txt', 'md', 'markdown', 'csv', 'json'].includes(extension)) throw new Error(`${name}: use TXT, Markdown, CSV, or JSON.`);
+  if (!text.trim()) throw new Error(`${name}: this file is empty.`);
+  if (text.includes('\0') || text.includes('\ufffd')) throw new Error(`${name}: please use a UTF-8 text file.`);
+  if (extension === 'json') { try { JSON.parse(text); } catch { throw new Error(`${name}: invalid JSON.`); } }
+  const heading = text.match(/^#\s+(.+)$/m)?.[1];
+  const title = (heading || name.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ')).slice(0, 160);
+  return { id: crypto.randomUUID(), title, author: 'Your document', collection: 'research', type: extension === 'csv' ? 'Dataset' : extension === 'json' ? 'JSON' : 'Document', tags: ['Imported', extension.toUpperCase()], content: text.replace(/\r\n?/g, '\n'), added: new Date().toISOString(), sample: false, cover: 'paper', filename: name };
+}
+function validateState(value) {
+  if (!value || value.version !== 1 || !Array.isArray(value.docs) || !Array.isArray(value.pins)) return false;
+  const str = x => typeof x === 'string';
+  const ids = new Set();
+  for (const d of value.docs) {
+    if (!d || !['id', 'title', 'author', 'collection', 'type', 'content', 'added', 'cover'].every(k => str(d[k])) || !Array.isArray(d.tags) || !d.tags.every(str) || typeof d.sample !== 'boolean' || ids.has(d.id) || (d.filename != null && !str(d.filename))) return false;
+    ids.add(d.id);
+  }
+  const pinIds = new Set();
+  return value.pins.every(p => {
+    if (!p || !['id', 'docId', 'title', 'author', 'quote', 'note', 'created'].every(k => str(p[k])) || typeof p.sample !== 'boolean' || (p.filename != null && !str(p.filename)) || !Number.isInteger(p.line) || !Number.isInteger(p.endLine) || p.line <= 0 || p.endLine < p.line || pinIds.has(p.id)) return false;
+    pinIds.add(p.id); return true;
+  }) && str(value.briefTitle);
+}
+
+// Fictional demonstration documents, written for this application. Not research evidence.
+const source = [
+  ['night', 'The city after dark', 'Mira Ellis', 'culture', 'Field notes', ['Nightlife', 'Public space'], 'night', `# The city after dark
+
+Field notes from New Meridian. A fictional sample, written to explore how a city changes when the working day ends.
+
+## A different kind of map
+
+At 9:40 p.m., the laundromat on Alder Street is the brightest room on the block. Three people fold clothes. One reads. Another has brought a chessboard. Nobody calls this a community center, but it behaves like one.
+
+The places that hold a neighborhood together are not always the places we put on a map. They are the rooms where staying does not require an explanation.
+
+## What stays open
+
+We walked six blocks and counted the doors still open after ten. A bakery preparing tomorrow's bread. A late pharmacy. A corner shop with a handwritten sign: take a seat if you need one.
+
+The library closed at seven. Its steps remained occupied until midnight. Public space does not stop being necessary when its official opening hours end.
+
+## The observation
+
+A city after dark is not an empty version of its daytime self. It is a different network of needs, rituals, and informal agreements. People borrow light, company, and a little time from whatever stays open.
+
+If we want a more generous city, we might begin by asking a small question: where can someone go tonight without having to buy something?
+
+## A question to carry
+
+What would change if we designed public spaces around the hours people actually need them, rather than the hours institutions prefer to operate?`],
+  ['third', 'A place between places', 'Jonah Park', 'culture', 'Essay', ['Belonging', 'Third places'], 'arches', `# A place between places
+
+A fictional essay on the ordinary rooms that make a neighborhood feel like home.
+
+## Neither home nor work
+
+There is a table in the corner café that nobody owns and everyone recognizes. On Tuesdays it belongs to a retired teacher. On Fridays, to two teenagers making a magazine. The furniture stays still; its purpose keeps changing.
+
+A third place is valuable because its terms are simple. You can arrive without an appointment. You can become familiar without becoming obligated. You can be alone in the company of others.
+
+## Permission to linger
+
+The most important feature of a public room may be permission to linger. A comfortable chair matters less if someone is waiting for you to leave.
+
+In a neighborhood built around transactions, the act of staying becomes quietly political. The bench, the library, and the unhurried café offer something that an optimized schedule cannot: unclaimed time.
+
+## Familiar strangers
+
+Belonging often begins before friendship. It starts with the person who nods when you come through the door, the familiar stranger who notices when your usual chair is empty.
+
+Ritual makes these encounters possible. The same route, the same hour, the same small exchange. A neighborhood becomes a place when people start expecting one another.
+
+## Design implication
+
+Create spaces that do not demand a performance. Give people a reason to return, but do not require them to participate. Leave room for the ordinary.`],
+  ['between', 'Designing for the in-between', 'Ada Moreno', 'design', 'Design note', ['Attention', 'Digital spaces'], 'stairs', `# Designing for the in-between
+
+A fictional design note about pauses, margins, and the value of leaving room.
+
+## An interface is also a room
+
+We design interfaces as if every moment needs a next action. A button, a notification, a suggestion. Yet the most useful moment in a research session is often the pause between reading something and knowing what it means.
+
+An interface can make room for that pause. It can keep the source visible, preserve an unfinished thought, and resist the urge to offer an answer before a question has formed.
+
+## Space is a feature
+
+In public space, a bench creates permission to stop. In a digital workspace, an empty margin can do the same thing. It tells the reader that not every surface is competing for attention.
+
+The goal is not fewer features. It is a clearer relationship between the person, the material, and the next useful decision.
+
+## Three small experiments
+
+Keep the original quote beside the interpretation. Let a note remain untitled. Make it easy to return to the exact paragraph that started a thought.
+
+These choices are small. Together, they change a tool from a machine that moves work forward into a place where thinking can happen.
+
+## An open question
+
+What would a digital third place look like? Somewhere to arrive without a task, stay without a timer, and leave with a thought you did not expect to have.`],
+  ['ritual', 'Small rituals, shared streets', 'Leah Okafor', 'culture', 'Interview', ['Rituals', 'Neighborhoods'], 'sun', `# Small rituals, shared streets
+
+An invented conversation with a neighborhood baker. All people and details in this sample are fictional.
+
+## Before the doors open
+
+Every morning, I put two chairs outside. They are not for customers, exactly. They are for whoever is first to need them. Usually it is the bus driver on her break and a man walking a very old dog.
+
+## Why the chairs matter
+
+People say they miss community, but community is an enormous word. I think they miss being expected somewhere. They miss someone remembering how they take their tea.
+
+A ritual gives people a small, repeatable reason to show up. Over time, the reason becomes less important than the showing up.
+
+## The evening shift
+
+We started staying open late on Thursdays. Not for sales. A few neighbors wanted somewhere to mend clothes together. Now the bakery smells like bread and somebody is always trying to thread a needle.
+
+There is a kind of public space that happens by invitation rather than by architecture. You leave a door open. You move a table. You make enough tea.
+
+## One thing to change
+
+If I could change one thing about this street, I would put a place to sit halfway between the bus stop and the pharmacy. There are people for whom that is a very long walk. Design begins when you notice who has to stop.`],
+  ['time', 'An atlas of borrowed time', 'Theo Reed', 'research', 'Observation', ['Time', 'Public space'], 'atlas', `# An atlas of borrowed time
+
+A fictional observation log about waiting, belonging, and public space.
+
+## Monday — the station
+
+The train is twelve minutes late. People arrange themselves along the platform according to a geography that is invisible on the station plan: near the light, away from the draft, close enough to hear an announcement.
+
+Waiting is not empty time. It is time spent negotiating your surroundings. A place to lean, a readable sign, or a patch of shade can change its entire character.
+
+## Wednesday — the library
+
+At four, every chair near a power outlet is occupied. The rest are half empty. The room has two maps: the one the architect drew and the one people make with their needs.
+
+Public spaces reveal their priorities through what they allow people to do without asking. Charge a phone. Use a bathroom. Read a book without buying it. Sit down without explaining why.
+
+## Friday — the square
+
+A temporary row of chairs changes the edge of the square. People sit facing one another instead of facing traffic. A conversation starts. A child makes a circuit around the group. A space becomes a room.
+
+## Working hypothesis
+
+We often measure the success of public space by how many people pass through it. We could also measure how many people choose to stay, and whether the choice is open to everyone.`],
+  ['slow', 'The case for slow interfaces', 'Ada Moreno', 'design', 'Essay', ['Attention', 'Tools for thought'], 'orbit', `# The case for slow interfaces
+
+A fictional essay about tools that support thinking rather than simply accelerating it.
+
+## Fast is not the only kind of good
+
+Some work benefits from speed. Looking up a train time should not require contemplation. But reading a difficult passage, comparing sources, or writing a careful note has a different rhythm.
+
+The question is not whether an interface feels fast. It is whether it makes the important work easier. Sometimes that means reducing steps. Sometimes it means keeping a necessary step intact.
+
+## Productive friction
+
+Before a quote becomes evidence, it should remain attached to its source. Before a connection becomes a conclusion, it should survive a closer reading.
+
+A thoughtful research tool makes the origin of an idea easy to inspect. It does not turn a suggestion into a fact simply because it can display one confidently.
+
+## A place for unfinished thoughts
+
+We need digital spaces where an unfinished thought is allowed to remain unfinished. Not everything needs a summary. Not every note needs a category. Not every reading session needs an output.
+
+The best tools leave a clear trail: what you read, what you kept, and what you added. This separation is not a limitation. It is what makes the work trustworthy.
+
+## A useful test
+
+Close the tool. Come back tomorrow. Can you still tell which words were yours and which came from someone else? If you can, the interface has protected something important.`],
+  ['listen', 'What a neighborhood asks for', 'Common Ground Studio', 'research', 'Research memo', ['Listening', 'Belonging'], 'windows', `# What a neighborhood asks for
+
+Demonstration research memo. This is a fictional study with invented observations, not evidence about a real population.
+
+## The exercise
+
+We imagined asking twenty-four residents one question: where do you go when you need to be around people, but do not want to make plans?
+
+The answers described libraries, corner shops, parks, and a particular bus stop. Several people named a place that had already closed. Memory, it seems, keeps a neighborhood's gathering places open longer than a lease does.
+
+## A recurring theme
+
+The most frequent wish was not for a new destination. It was for existing places to become easier to use: later opening hours, somewhere to sit, a bathroom that did not require a purchase.
+
+Belonging depends on small forms of permission. Can I come in? Can I stay? Will anyone mind if I am here alone?
+
+## What we would test next
+
+Try one evening of extended library hours. Place movable chairs near the market. Ask people who leave early what would make it easier to stay. Observe who still does not feel welcome.
+
+## A caution
+
+Listening is not the same as agreement, and an imagined exercise is not a real study. In actual research, preserve the original responses, separate observation from interpretation, and make uncertainty visible.`],
+  ['library', 'A library without walls', 'Mira Ellis', 'culture', 'Field notes', ['Libraries', 'Shared knowledge'], 'shelf', `# A library without walls
+
+An imagined field visit to a neighborhood book exchange. This sample is entirely fictional.
+
+## The first shelf
+
+It began with a shelf under an awning. A neighbor left six books and a note: take what you will read, bring what you would recommend. By spring, the shelf had become three shelves and a chair.
+
+People did not borrow only books. They borrowed recommendations, bits of local knowledge, and a reason to stop on their way home. The exchange was a public space small enough to fit against a wall.
+
+## A different kind of catalog
+
+There was no system for tracking returns. Instead, people left notes inside covers. Read this if you are starting again. The ending is worth it. This reminded me of my father.
+
+A library is more than an arrangement of objects. It is a set of relationships between people, ideas, and the possibility of finding something unexpected.
+
+## What the shelf teaches
+
+An invitation works best when its terms are legible. Take a book. Leave a book. Sit for a while. The rules were simple enough to disappear, leaving the encounter in the foreground.
+
+There is a lesson here for digital collections. Make it easy to enter. Keep the source attached. Leave enough room for a reader to make a connection that the catalog did not anticipate.`],
+  ['serendipity', 'Leave room for serendipity', 'Jonah Park', 'design', 'Essay', ['Discovery', 'Tools for thought'], 'shapes', `# Leave room for serendipity
+
+A fictional essay about the difference between finding an answer and discovering a question.
+
+## The next shelf over
+
+Looking for one book, you find another. The second book is not an answer to your query. It changes the query. This is one of the useful things a physical library does without announcing a feature.
+
+Digital search is good at returning what matches. Discovery needs a little more room. It needs nearby material, visible context, and a reader willing to follow a thread without knowing where it ends.
+
+## Connections with receipts
+
+A suggestion is most useful when you can inspect why it appeared. Shared words are a modest reason for two sources to meet. They are not proof that the sources agree, or even that they use those words in the same way.
+
+Good discovery makes a connection available without pretending to settle its meaning. The person does the interpretation. The tool keeps the trail.
+
+## A small design principle
+
+Show the related source, the shared terms, and the original passage. Let the reader decide whether the connection is worth keeping. Make it just as easy to move on.
+
+## The open collection
+
+A collection should feel less like a finished filing cabinet and more like a room with a few open doors. You know where you are. You can always return. Something interesting might be on the next shelf.`],
+];
+function sampleDocuments() {
+  return source.map(([id, title, author, collection, type, tags, cover, content], i) => ({ id: `sample-${id}`, title, author, collection, type, tags, cover, content, added: new Date(Date.UTC(2026, 9, 20 - i)).toISOString(), sample: true }));
+}
+
+const esc = escapeHTML;
+
+const $ = id => document.getElementById(id);
+const icons = {
+  library: '<rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="16" rx="1"/><path d="m17 5 4 14-3 1-4-14"/>',
+  bookmark: '<path d="M6 4h12v17l-6-4-6 4V4Z"/>',
+  home: '<path d="m3 10 9-7 9 7v10h-6v-6H9v6H3Z"/>',
+  search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',
+  lock: '<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/>',
+  grid: '<rect x="3" y="3" width="6" height="6" rx=".5"/><rect x="15" y="3" width="6" height="6" rx=".5"/><rect x="3" y="15" width="6" height="6" rx=".5"/><rect x="15" y="15" width="6" height="6" rx=".5"/>',
+  list: '<path d="M9 5h12M9 12h12M9 19h12M3 5h2M3 12h2M3 19h2"/>',
+  book: '<path d="M12 5C9 3 5 3 2 4v16c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Zm0 0v16"/>',
+  download: '<path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/>',
+  link: '<path d="m9 15 6-6m-8 4-2 2a4 4 0 0 0 6 6l3-3a4 4 0 0 0 0-6m-4 0a4 4 0 0 1 0-6l3-3a4 4 0 0 1 6 6l-2 2"/>',
+  quote: '<path d="M4 6h6v8H5c0 3 2 4 4 4M14 6h6v8h-5c0 3 2 4 4 4"/>',
+  file: '<path d="M5 2h9l5 5v15H5Zm9 0v6h5M8 12h8M8 16h8"/>',
+  arrow: '<path d="M6 18 18 6M6 6h12v12"/>',
+};
+const icon = name => `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[name] ?? icons.file}</svg>`;
+document.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = icon(el.dataset.icon); });
+// Draw arrows as vectors; minimal Linux font sets do not always include ↗.
+const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+const arrowTextNodes = [];
+while (textWalker.nextNode()) if (textWalker.currentNode.textContent.includes('↗')) arrowTextNodes.push(textWalker.currentNode);
+for (const node of arrowTextNodes) {
+  const fragment = document.createDocumentFragment();
+  node.textContent.split('↗').forEach((text, i) => {
+    if (i) { const span = document.createElement('span'); span.className = 'inline-arrow'; span.innerHTML = icon('arrow'); fragment.append(span); }
+    fragment.append(document.createTextNode(text));
+  });
+  node.replaceWith(fragment);
+}
+
+let state = { version: 1, docs: sampleDocuments(), pins: [], briefTitle: 'Notes on a more thoughtful world' };
+let collection = 'all', view = 'library', layout = 'grid', currentDocId = null, toastTimer, pendingUndo = null;
+let unsaved = false, persistenceBlocked = false, storageWarned = false;
+try {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const parsed = JSON.parse(saved);
+    if (!validateState(parsed)) throw new Error('Invalid saved workspace');
+    state = parsed;
+  }
+} catch {
+  persistenceBlocked = true; unsaved = true;
+  setTimeout(() => toast('Stored data could not be read. Working in memory; the stored copy is untouched. Export to keep new work.'), 100);
+}
+
+function save() {
+  try {
+    if (persistenceBlocked) throw new Error('Stored workspace unreadable');
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); unsaved = false;
+  } catch {
+    unsaved = true;
+    if (!storageWarned) { toast('Browser storage is unavailable or full. Your work is in memory. Export a workspace backup to keep it.'); storageWarned = true; }
+  }
+  $('storage-status').textContent = unsaved ? 'Not saved — export a backup' : 'Saved on this device';
+  return !unsaved;
+}
+if (persistenceBlocked) $('storage-status').textContent = 'Memory only — export a backup';
+window.addEventListener('beforeunload', event => { if (unsaved) { event.preventDefault(); event.returnValue = ''; } });
+
+function toast(message, undo = null) {
+  clearTimeout(toastTimer); pendingUndo = undo;
+  if (unsaved && !/memory|backup/i.test(message)) message += ' Session only — export a workspace backup to keep this change.';
+  $('toast').innerHTML = `<span>${esc(message)}</span>${undo ? '<button id="undo-action">Undo</button>' : ''}`;
+  if (undo) $('undo-action').onclick = () => { const action = pendingUndo; pendingUndo = null; $('toast').hidePopover?.(); $('toast').hidden = true; action?.(); };
+  $('toast').hidden = false;
+  $('toast').showPopover?.();
+  toastTimer = setTimeout(() => { $('toast').hidePopover?.(); $('toast').hidden = true; pendingUndo = null; }, undo ? 10000 : 6500);
+}
+
+const categories = { culture: 'Culture & community', design: 'Design & attention', research: 'Research & observations' };
+const descriptions = {
+  night: 'On the quiet places that keep a neighborhood awake.', third: 'The ordinary rooms that make us feel at home.', between: 'A little room for the thought that hasn’t formed yet.', ritual: 'A conversation about showing up for one another.', time: 'Notes on waiting, lingering, and finding a place to stay.', slow: 'Not every good tool needs to make us faster.', listen: 'The small permissions that make belonging possible.', library: 'A shelf, a chair, and a different kind of catalog.', serendipity: 'Finding the question you didn’t know to ask.',
+};
+
+function coverArt(type) {
+  const artworks = {
+    night: '<rect width="320" height="190" fill="#334a42"/><circle cx="233" cy="46" r="23" fill="#d4cf9d"/><path d="M0 157V88h30v-25h41v59h28V45h34v95h30V80h36v66h25v-36h34v40h32V97h30v93H0" fill="#243c34"/><path d="M18 99h5m17-23h6m63-12h6m-6 19h6m60 9h6m0 21h6m64 9h5m47-12h5" stroke="#d5c68b" stroke-width="5"/><path d="M0 166h320M0 180h320" stroke="#8b9b7b" stroke-width=".5" opacity=".4"/>',
+    arches: '<rect width="320" height="190" fill="#b5b8a2"/><path d="M0 190V71a67 67 0 0 1 134 0v119" fill="#d8d7bc"/><path d="M34 190V75a33 33 0 0 1 66 0v115" fill="#83937c"/><path d="M128 190V98a67 67 0 0 1 134 0v92" fill="#677e68"/><path d="M160 190V98a35 35 0 0 1 70 0v92" fill="#2f4e40"/><path d="M256 0h64v190h-64" fill="#a5ad92"/><circle cx="195" cy="112" r="12" fill="#d4ceaa"/><path d="M145 190h105" stroke="#d5ceb1" stroke-width="1"/>',
+    stairs: '<rect width="320" height="190" fill="#c3baa1"/><path d="M0 190V157h46v-30h46V97h46V67h46V37h46V7h90v183Z" fill="#e0d8bc"/><path d="M46 157h46v-30h46V97h46V67h46V37h90" stroke="#a49f80" stroke-width="1"/><path d="m230 7 40 34v149H46l-46-33h46v-30h46V97h46V67h46V37h46Z" fill="#f0ead0" opacity=".16"/><circle cx="76" cy="45" r="19" fill="#6c7c5f"/>',
+    sun: '<rect width="320" height="190" fill="#c6a48b"/><circle cx="160" cy="95" r="65" fill="#dcd0ae"/><path d="M0 150q80-70 160 0t160 0v40H0" fill="#7d896a"/><path d="M0 175q80-70 160 0t160 0v15H0" fill="#4e6a51"/><circle cx="160" cy="88" r="30" fill="#d19768"/><path d="M160 32v14m0 84v14m-56-56h14m84 0h14m-96-40 10 10m60 60 10 10m0-80-10 10m-60 60-10 10" stroke="#b5a17a" stroke-width="1"/>',
+    atlas: '<rect width="320" height="190" fill="#748773"/><g stroke="#b2bca0" stroke-width=".8" fill="none" opacity=".65"><ellipse cx="162" cy="102" rx="24" ry="19"/><ellipse cx="162" cy="102" rx="44" ry="35"/><ellipse cx="162" cy="102" rx="65" ry="51"/><ellipse cx="162" cy="102" rx="86" ry="69"/><ellipse cx="162" cy="102" rx="107" ry="86"/><ellipse cx="162" cy="102" rx="128" ry="104"/><ellipse cx="162" cy="102" rx="150" ry="122"/><path d="M0 102h320M162 0v190" opacity=".5"/></g><circle cx="162" cy="102" r="5" fill="#e7ddba"/>',
+    orbit: '<rect width="320" height="190" fill="#b4bca7"/><circle cx="162" cy="95" r="49" fill="#dfe0c5"/><g fill="none" stroke="#6d8364" stroke-width="1"><ellipse cx="162" cy="95" rx="103" ry="29" transform="rotate(-25 162 95)"/><ellipse cx="162" cy="95" rx="103" ry="29" transform="rotate(35 162 95)"/><ellipse cx="162" cy="95" rx="103" ry="29" transform="rotate(95 162 95)"/></g><circle cx="78" cy="64" r="7" fill="#556d51"/><circle cx="244" cy="55" r="4" fill="#b18158"/>',
+    windows: '<rect width="320" height="190" fill="#656e5e"/><path d="M0 0h320v190H0Z" fill="#53624f"/><g fill="#b2ac81"><path d="M36 30h53v62H36zM133 30h53v62h-53zM231 30h53v62h-53zM36 124h53v66H36zM133 124h53v66h-53zM231 124h53v66h-53z"/></g><path d="M62 30v62m-26-31h53m70-31v62m-26-31h53m71-31v62m-26-31h53M62 124v66m97-66v66m98-66v66" stroke="#7c805f" stroke-width="4"/><path d="M40 128h18v50H40m98-50h17v44h-17" fill="#d3c393"/>',
+    shelf: '<rect width="320" height="190" fill="#bec4aa"/><path d="M30 147h260v7H30" fill="#738368"/><path d="M54 147V54h23v93" fill="#5b755b"/><path d="M83 147V39h29v108" fill="#d1c49a"/><path d="M118 147V65h19v82" fill="#8d987a"/><path d="m146 147 24-95 27 7-24 88" fill="#c19d7b"/><path d="M205 147V73h30v74" fill="#6b8062"/><path d="M242 147V59h20v88" fill="#e0d8b9"/><path d="M58 68h15m15-13h20m14 27h12m76 10h20m16-15h12" stroke="#f2ebcf" opacity=".6"/>',
+    shapes: '<rect width="320" height="190" fill="#ddd5bd"/><path d="M45 144V70a52 52 0 0 1 104 0v74Z" fill="#8c9c7d"/><circle cx="211" cy="76" r="45" fill="#bd9c79"/><path d="m152 163 47-92 47 92Z" fill="#526e54"/><path d="M33 162h253M271 25v142" stroke="#8b977b" stroke-width=".7"/><circle cx="103" cy="115" r="24" fill="#e7dfc4"/>',
+    paper: '<rect width="320" height="190" fill="#b7c0a5"/><rect x="99" y="23" width="126" height="151" rx="2" fill="#eae7d5" transform="rotate(8 162 95)"/><g stroke="#aab399" stroke-width="1"><path d="m125 68 74 10m-77 9 74 10m-77 9 74 10m-77 9 53 7"/></g><path d="m140 33 55 7" stroke="#7c9169" stroke-width="3"/>',
+  };
+  return `<svg viewBox="0 0 320 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${artworks[type] || artworks.paper}</svg>`;
+}
+
+function updateCounts() {
+  $('library-count').textContent = state.docs.length; $('brief-count').textContent = state.pins.length;
+  $('count-all').textContent = state.docs.length;
+  for (const key of Object.keys(categories)) $(`count-${key}`).textContent = state.docs.filter(d => d.collection === key).length;
+  $('count-imported').textContent = state.docs.filter(d => !d.sample).length;
+  $('export-brief').disabled = !state.pins.length;
+}
+function renderLibrary() {
+  const query = $('search').value;
+  const results = searchDocuments(state.docs, query, collection, $('sort').value);
+  $('collection-title').textContent = collection === 'all' ? 'The collection' : collection === 'imported' ? 'Your imports' : categories[collection];
+  $('result-count').textContent = `${results.length} ${results.length === 1 ? 'source' : 'sources'}`;
+  $('clear-search').hidden = !query;
+  $('active-search').hidden = !query;
+  $('active-search').textContent = `Matching ${query} · all terms required · quoted phrases match exactly`;
+  $('empty-library').hidden = results.length > 0;
+  $('library-grid').classList.toggle('list-layout', layout === 'list');
+  $('library-grid').innerHTML = results.map(({ doc, match }, i) => {
+    const excerpt = doc.sample ? descriptions[doc.id.replace('sample-', '')] : paragraphs(doc.content).find(p => !p.heading)?.text;
+    return `<article class="source-card"><button class="card-open" data-open="${esc(doc.id)}" aria-label="Read ${esc(doc.title)}"></button><div class="cover">${coverArt(doc.cover)}<span class="cover-type">${esc(doc.type.toUpperCase())}</span><span class="cover-number">${doc.sample ? 'SAMPLE' : 'PRIVATE'} / ${String(i + 1).padStart(2, '0')}</span></div><div class="card-content"><div class="card-category"><i></i>${esc(categories[doc.collection] || 'Your collection')}</div><h3>${highlight(doc.title, query)}</h3><p>${esc(excerpt?.slice(0, 200) || 'Your next thought starts here.')}</p><div class="card-meta"><span><i class="author-dot">${esc(doc.author[0] || '?')}</i>${esc(doc.author)}</span><span>${readingTime(doc.content)} min read</span></div><div class="card-bottom">${doc.tags.slice(0, 2).map(t => `<span class="tag">${esc(t)}</span>`).join('')}<span>${icon('arrow')}</span></div></div>${match ? `<div class="search-snippet"><small>MATCH · LINES ${match.line}–${match.endLine}</small>${highlight(snippet(match.text, query), query)}</div>` : ''}</article>`;
+  }).join('');
+  $('library-grid').querySelectorAll('[data-open]').forEach(button => button.onclick = () => openDoc(button.dataset.open));
+  const sampleCount = state.docs.filter(d => d.sample).length;
+  $('library-footnote').innerHTML = sampleCount ? `${sampleCount} fictional sample sources to explore. <strong>Bring your own material to make this desk yours.</strong>` : 'Your sources stay on this device. Export a workspace backup to keep a copy.';
+  $('restore-samples').hidden = sampleCount === 9;
+  updateCounts();
+}
+function snippet(text, query) {
+  const terms = query.toLowerCase().match(/[^\s"]+/g) || [];
+  const positions = terms.map(t => text.toLowerCase().indexOf(t)).filter(i => i >= 0);
+  const start = Math.max(0, (positions.length ? Math.min(...positions) : 0) - 40);
+  return `${start ? '…' : ''}${text.slice(start, start + 180)}${text.length > start + 180 ? '…' : ''}`;
+}
+function setView(next) {
+  view = next;
+  $('library-view').hidden = next !== 'library'; $('brief-view').hidden = next !== 'brief';
+  $('nav-library').classList.toggle('active', next === 'library'); $('nav-brief').classList.toggle('active', next === 'brief');
+  $('nav-library').setAttribute('aria-current', next === 'library' ? 'page' : 'false');
+  $('nav-brief').setAttribute('aria-current', next === 'brief' ? 'page' : 'false');
+  $('breadcrumb').textContent = next === 'library' ? 'Library' : 'Your brief';
+  if (next === 'brief') renderBrief(); else renderLibrary();
+}
+function setCollection(next) {
+  collection = next;
+  $('mobile-collection').value = next;
+  document.querySelectorAll('[data-collection]').forEach(b => { b.classList.toggle('active', b.dataset.collection === next); b.setAttribute('aria-pressed', String(b.dataset.collection === next)); });
+  setView('library');
+}
+
+function openDoc(id, line = null) {
+  const doc = state.docs.find(d => d.id === id);
+  if (!doc) { toast('The original source was removed. Your saved quote and citation are still in the brief.'); return; }
+  currentDocId = id;
+  $('reader-title').textContent = doc.title;
+  $('reader-type').textContent = doc.type.toUpperCase(); $('reader-sample').hidden = !doc.sample;
+  $('reader-tags').innerHTML = doc.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('');
+  $('reader-meta').innerHTML = `<span>${esc(doc.author)}</span><span>${wordCount(doc.content).toLocaleString()} words</span><span>${readingTime(doc.content)} min read</span>`;
+  $('source-filename').textContent = doc.filename || 'FICTIONAL SAMPLE · COMMONPLACE STARTER COLLECTION';
+  $('reader-body').innerHTML = paragraphs(doc.content).map((p, index) => p.heading ? `<h3>${highlight(p.text.replace(/^#{1,6}\s+/, ''), $('search').value)}</h3>` : `<section class="source-paragraph" id="paragraph-${p.line}"><span class="line-label" aria-hidden="true">${p.line}</span><p>${highlight(p.text, $('search').value)}</p><button data-pin="${index}" aria-label="Save passage at line ${p.line} to your brief" aria-pressed="false" title="Save this passage">＋</button></section>`).join('');
+  $('reader-body').querySelectorAll('[data-pin]').forEach(button => button.onclick = () => pinParagraph(doc, paragraphs(doc.content)[Number(button.dataset.pin)]));
+  const related = relatedDocuments(doc, state.docs);
+  $('related-docs').innerHTML = related.length ? related.map(r => `<article class="related-card"><button data-related="${esc(r.doc.id)}" aria-label="Read related source: ${esc(r.doc.title)}"></button><small>${esc(r.doc.type)}</small><h4>${esc(r.doc.title)}</h4><p>Shared language<br><strong>${r.terms.map(esc).join(' · ')}</strong></p></article>`).join('') : '<p class="no-connections">Add more sources to discover shared language.</p>';
+  $('related-docs').querySelectorAll('[data-related]').forEach(b => b.onclick = () => openDoc(b.dataset.related));
+  updateReaderPins();
+  if (!$('reader').open) $('reader').showModal();
+  document.querySelector('.reader-article').scrollTop = 0;
+  document.querySelector('.reader-layout').scrollTop = 0;
+  $('reader-close').focus({ preventScroll: true });
+  if (line) requestAnimationFrame(() => {
+    const p = $(`paragraph-${line}`);
+    p?.scrollIntoView({ block: 'center', behavior: 'smooth' }); p?.classList.add('source-flash');
+  });
+}
+function updateReaderPins() {
+  const doc = state.docs.find(d => d.id === currentDocId);
+  if (!doc) return;
+  const parts = paragraphs(doc.content);
+  $('reader-body').querySelectorAll('[data-pin]').forEach(b => {
+    const p = parts[Number(b.dataset.pin)], saved = state.pins.some(pin => pin.docId === doc.id && pin.line === p.line && pin.quote === p.text);
+    b.textContent = saved ? '✓' : '＋'; b.setAttribute('aria-pressed', String(saved)); b.title = saved ? 'Already in your brief' : 'Save this passage';
+  });
+  $('reader-pin-count').textContent = `${state.pins.length} ${state.pins.length === 1 ? 'passage' : 'passages'} in your brief`;
+}
+function pinParagraph(doc, paragraph) {
+  if (state.pins.some(p => p.docId === doc.id && p.line === paragraph.line && p.quote === paragraph.text)) { toast('Already kept. Add your own note in the brief.'); return; }
+  const pin = makePin(doc, paragraph); state.pins.push(pin); save(); updateCounts(); updateReaderPins();
+  toast('Passage kept. Its source and line numbers came along.', () => { state.pins = state.pins.filter(p => p.id !== pin.id); save(); updateCounts(); updateReaderPins(); if (view === 'brief') renderBrief(); });
+}
+function renderBrief() {
+  $('brief-title').value = state.briefTitle;
+  $('brief-empty').hidden = state.pins.length > 0;
+  $('brief-pins').innerHTML = state.pins.map((p, index) => {
+    const exists = state.docs.some(d => d.id === p.docId);
+    return `<article class="pin-card" data-pin-id="${esc(p.id)}"><div class="pin-header"><span class="pin-number">${String(index + 1).padStart(2, '0')}</span><div><button class="pin-source" data-source="${esc(p.id)}">${esc(p.title)} ${icon('arrow')}</button><div class="pin-location">${esc(p.author)} · LINES ${p.line}–${p.endLine}${p.sample ? ' · FICTIONAL SAMPLE' : ''}</div></div><button class="pin-remove" data-remove-pin="${esc(p.id)}" aria-label="Remove quote from ${esc(p.title)}">×</button></div><blockquote>${esc(p.quote)}</blockquote><label for="note-${esc(p.id)}">YOUR THOUGHTS</label><textarea id="note-${esc(p.id)}" data-note="${esc(p.id)}" maxlength="30000" placeholder="What does this bring to mind? How does it connect?">${esc(p.note)}</textarea><div class="pin-actions"><button data-move="up" data-id="${esc(p.id)}" ${index === 0 ? 'disabled' : ''} aria-label="Move quote up">↑ Move up</button><button data-move="down" data-id="${esc(p.id)}" ${index === state.pins.length - 1 ? 'disabled' : ''} aria-label="Move quote down">↓ Move down</button>${!exists ? '<span class="pin-missing">Original source removed · quote preserved</span>' : ''}</div></article>`;
+  }).join('');
+  $('brief-pins').querySelectorAll('[data-note]').forEach(input => input.oninput = () => { state.pins.find(p => p.id === input.dataset.note).note = input.value; save(); });
+  $('brief-pins').querySelectorAll('[data-source]').forEach(b => b.onclick = () => { const p = state.pins.find(p => p.id === b.dataset.source); openDoc(p.docId, p.line); });
+  $('brief-pins').querySelectorAll('[data-remove-pin]').forEach(b => b.onclick = () => {
+    const index = state.pins.findIndex(p => p.id === b.dataset.removePin), [removed] = state.pins.splice(index, 1);
+    save(); renderBrief(); updateCounts();
+    toast('Passage removed from your brief.', () => { state.pins.splice(index, 0, removed); save(); renderBrief(); updateCounts(); });
+  });
+  $('brief-pins').querySelectorAll('[data-move]').forEach(b => b.onclick = () => {
+    const from = state.pins.findIndex(p => p.id === b.dataset.id), to = from + (b.dataset.move === 'up' ? -1 : 1);
+    if (to < 0 || to >= state.pins.length) return;
+    [state.pins[from], state.pins[to]] = [state.pins[to], state.pins[from]]; save(); renderBrief();
+    $('announcements').textContent = `Quote moved to position ${to + 1}.`;
+    $('brief-pins').querySelector(`[data-id="${CSS.escape(b.dataset.id)}"][data-move="${b.dataset.move}"]`)?.focus();
+  });
+  updateCounts();
+}
+function download(name, content, type) {
+  const url = URL.createObjectURL(new Blob([content], { type })), a = document.createElement('a');
+  a.href = url; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+function workspaceBytes(docs) { return new TextEncoder().encode(docs.map(d => d.content).join('')).length; }
+function mergeBackup(backup) {
+  const docs = [...state.docs], mapping = new Map();
+  for (const original of backup.docs) {
+    const existing = docs.find(d => d.id === original.id);
+    if (existing && existing.content === original.content) { mapping.set(original.id, existing.id); continue; }
+    const doc = structuredClone(original);
+    if (existing) doc.id = crypto.randomUUID();
+    mapping.set(original.id, doc.id); docs.push(doc);
+  }
+  if (workspaceBytes(docs) > MAX_LIBRARY_BYTES) throw new Error('This backup would exceed the 8 MB source-text limit.');
+  const pins = [...state.pins];
+  for (const original of backup.pins) {
+    const pin = { ...original, docId: mapping.get(original.docId) || original.docId };
+    const existing = pins.find(p => p.id === pin.id);
+    if (existing && JSON.stringify(existing) === JSON.stringify(pin)) continue;
+    if (existing) pin.id = crypto.randomUUID();
+    pins.push(pin);
+  }
+  const added = docs.length - state.docs.length;
+  const addedPins = pins.length - state.pins.length;
+  state.docs = docs; state.pins = pins;
+  if (!state.briefTitle || (state.pins.length === addedPins && addedPins > 0)) state.briefTitle = backup.briefTitle;
+  return `${added} sources and ${addedPins} passages restored`;
+}
+async function importFiles(files) {
+  let added = 0, skipped = 0; const errors = [], backups = [];
+  for (const file of files) {
+    try {
+      if (file.size > 12 * 1024 * 1024) throw new Error(`${file.name}: this file is too large.`);
+      const text = await file.text();
+      if (file.name.toLowerCase().endsWith('.json')) {
+        let parsed;
+        try { parsed = JSON.parse(text); } catch { /* importDocument reports malformed JSON */ }
+        if (parsed?.version === 1 && Array.isArray(parsed.docs) && Array.isArray(parsed.pins)) {
+          if (!validateState(parsed)) throw new Error(`${file.name}: the workspace backup is invalid.`);
+          backups.push(mergeBackup(parsed)); continue;
+        }
+      }
+      const doc = importDocument(file.name, text, file.size);
+      if (state.docs.some(d => !d.sample && d.filename === doc.filename && d.content === doc.content)) { skipped++; continue; }
+      if (workspaceBytes([...state.docs, doc]) > MAX_LIBRARY_BYTES) throw new Error(`${file.name}: workspace source text would exceed 8 MB.`);
+      state.docs.unshift(doc); added++;
+    } catch (error) { errors.push(error.message); }
+  }
+  if (added || backups.length) { save(); setCollection(added ? 'imported' : 'all'); }
+  renderLibrary(); if (view === 'brief') renderBrief();
+  const messages = [added ? `${added} ${added === 1 ? 'source' : 'sources'} added. Nothing was uploaded.` : '', ...backups, skipped ? `${skipped} duplicate ${skipped === 1 ? 'file' : 'files'} skipped.` : '', ...errors].filter(Boolean);
+  toast(messages.join(' ') || 'No files selected.');
+  $('file-input').value = '';
+}
+
+$('import-button').onclick = () => $('file-input').click();
+$('file-input').onchange = e => importFiles(e.target.files);
+document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => setView(b.dataset.view));
+document.querySelectorAll('[data-collection]').forEach(b => b.onclick = () => setCollection(b.dataset.collection));
+$('search').oninput = () => { if ($('search').value) $('sort').value = 'relevance'; renderLibrary(); };
+$('clear-search').onclick = () => { $('search').value = ''; renderLibrary(); $('search').focus(); };
+$('sort').onchange = renderLibrary;
+$('mobile-collection').onchange = e => setCollection(e.target.value);
+$('grid-view').onclick = () => setLayout('grid'); $('list-view').onclick = () => setLayout('list');
+function setLayout(next) { layout = next; for (const name of ['grid', 'list']) { $(`${name}-view`).classList.toggle('active', name === next); $(`${name}-view`).setAttribute('aria-pressed', String(name === next)); } renderLibrary(); }
+$('clear-filters').onclick = () => { $('search').value = ''; setCollection('all'); };
+$('browse-library').onclick = () => setView('library');
+$('reader-close').onclick = () => $('reader').close();
+$('reader-to-brief').onclick = () => { $('reader').close(); setView('brief'); };
+$('brief-title').oninput = () => { state.briefTitle = $('brief-title').value; save(); };
+$('export-brief').onclick = () => { download('commonplace-brief.md', exportBrief(state.briefTitle, state.pins), 'text/markdown;charset=utf-8'); toast('Brief exported with quotes, notes, and source line references.'); };
+$('export-workspace').onclick = () => { download('commonplace-workspace.json', JSON.stringify(state, null, 2), 'application/json'); toast('Workspace backup downloaded. Keep this file somewhere safe.'); };
+const showAbout = () => $('about-dialog').showModal();
+$('about-button').onclick = showAbout; $('shortcuts-button').onclick = showAbout;
+$('about-close').onclick = () => $('about-dialog').close();
+for (const dialog of [$('reader'), $('about-dialog')]) dialog.addEventListener('click', e => { if (e.target === dialog) { const r = dialog.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close(); } });
+$('delete-source').onclick = () => {
+  const index = state.docs.findIndex(d => d.id === currentDocId);
+  if (index < 0) return;
+  const [removed] = state.docs.splice(index, 1); $('reader').close(); save(); renderLibrary(); if (view === 'brief') renderBrief();
+  toast('Source removed. Saved quotes remain in your brief.', () => { state.docs.splice(index, 0, removed); save(); renderLibrary(); if (view === 'brief') renderBrief(); });
+};
+$('restore-samples').onclick = () => { const missing = sampleDocuments().filter(d => !state.docs.some(s => s.id === d.id)); state.docs.push(...missing); save(); renderLibrary(); toast(`${missing.length} fictional sample sources restored.`); };
+document.addEventListener('keydown', e => {
+  const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) || document.activeElement.isContentEditable;
+  if ((e.key === '/' && !typing) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+    e.preventDefault(); $('reader').close(); $('about-dialog').close(); setView('library'); $('search').focus(); $('search').scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+  if (e.key === 'Escape') { $('drop-overlay').hidden = true; }
+});
+let dragDepth = 0;
+document.addEventListener('dragenter', e => { if ([...e.dataTransfer.types].includes('Files')) { e.preventDefault(); dragDepth++; $('drop-overlay').hidden = false; } });
+document.addEventListener('dragover', e => { if ([...e.dataTransfer.types].includes('Files')) { e.preventDefault(); e.dataTransfer.dropEffect = 'copy'; } });
+document.addEventListener('dragleave', () => { dragDepth = Math.max(0, dragDepth - 1); if (!dragDepth) $('drop-overlay').hidden = true; });
+document.addEventListener('drop', e => { if (e.dataTransfer.files.length) { e.preventDefault(); dragDepth = 0; $('drop-overlay').hidden = true; $('reader').close(); $('about-dialog').close(); importFiles(e.dataTransfer.files); } });
+setView('library');
+</script></head>
+<body>
+<aside class="sidebar"><a class="brand" href="./"><span class="brand-symbol" aria-hidden="true">c<span>↗</span></span><span>commonplace<small>A RESEARCH DESK BY DRIVER</small></span></a><button class="import-button" id="import-button"><span>＋</span> Add to your library <kbd>↑</kbd></button><input id="file-input" type="file" accept=".txt,.md,.markdown,.csv,.json" multiple hidden><div class="side-label">YOUR WORKSPACE</div><nav class="main-nav" aria-label="Workspace"><button id="nav-library" class="active" data-view="library"><span data-icon="library"></span> Library <span id="library-count" class="nav-count">9</span></button><button id="nav-brief" data-view="brief"><span data-icon="bookmark"></span> Your brief <span id="brief-count" class="nav-count">0</span></button></nav><div class="side-label collection-label">COLLECTIONS <span>＋</span></div><nav class="collections" aria-label="Document collections"><button data-collection="all" class="active"><i class="collection-dot all"></i> Everything <span id="count-all">9</span></button><button data-collection="culture"><i class="collection-dot culture"></i> Culture & community <span id="count-culture">4</span></button><button data-collection="design"><i class="collection-dot design"></i> Design & attention <span id="count-design">3</span></button><button data-collection="research"><i class="collection-dot research"></i> Research & observations <span id="count-research">2</span></button><button data-collection="imported"><i class="collection-dot imported"></i> Your imports <span id="count-imported">0</span></button></nav><div class="sidebar-bottom"><div class="desk-note"><span>✳</span><p>“The art of being wise is the art of knowing what to overlook.”</p><small>WILLIAM JAMES</small></div><button id="about-button" class="privacy-note"><span data-icon="lock"></span><span>Your desk. Your data.<small id="storage-status">Saved on this device</small></span><span>↗</span></button><div class="sidebar-signature"><span class="avatar">D</span><span>A place for your next idea<small>LOCAL WORKSPACE · V1.0</small></span></div></div></aside>
+<div class="main-shell"><header class="topbar"><div class="breadcrumbs"><span data-icon="home"></span><span>/</span><span id="breadcrumb">Library</span></div><div class="topbar-right"><span class="local-status"><i></i> All yours. All local.</span><button id="shortcuts-button" class="icon-button" aria-label="Help and keyboard shortcuts" title="About this workspace">?</button><span class="avatar">D</span></div></header>
+<main id="main-content"><section id="library-view"><div class="hero"><div><div class="eyebrow"><span></span> A LITTLE LESS NOISE. A LITTLE MORE MEANING.</div><h1>Good ideas<br>leave a <em>trail.</em><svg viewBox="0 0 145 12" aria-hidden="true"><path d="M3 8Q65 0 142 6"/></svg></h1><p>A home for what catches your attention.<br>Read, connect, and make something of it.</p></div><div class="hero-art" aria-hidden="true"><div class="art-label">COLLECT THE THOUGHT.<br>KEEP THE THREAD.</div><div class="paper paper-back"><div></div><div></div><div></div></div><div class="paper paper-front"><span>✳</span><i></i><i></i><i></i><small>A thought worth keeping.</small></div><svg class="art-thread" viewBox="0 0 260 190"><path d="M12 125C-4 44 161 200 215 79S103-4 138 73 260 117 240 163"/></svg><div class="art-caption">A COMMONPLACE BOOK, REIMAGINED.</div></div></div>
+<div class="search-row"><span data-icon="search"></span><label class="sr-only" for="search">Search your library</label><input id="search" type="search" placeholder="Find a thought, a phrase, a connection…" autocomplete="off" spellcheck="false"><button id="clear-search" class="clear-search" aria-label="Clear search" hidden>×</button><kbd>/</kbd></div>
+<div class="mobile-collection"><label for="mobile-collection">COLLECTION</label><select id="mobile-collection"><option value="all">Everything</option><option value="culture">Culture & community</option><option value="design">Design & attention</option><option value="research">Research & observations</option><option value="imported">Your imports</option></select></div>
+<div class="library-heading"><div><h2 id="collection-title">The collection</h2><span id="result-count">9 sources</span></div><div class="library-actions"><label class="sr-only" for="sort">Sort documents</label><select id="sort"><option value="recent">Recently added</option><option value="title">Title A–Z</option><option value="relevance">Relevance</option></select><div class="view-switch" role="group" aria-label="Library layout"><button id="grid-view" class="active" aria-pressed="true" aria-label="Grid view"><span data-icon="grid"></span></button><button id="list-view" aria-pressed="false" aria-label="List view"><span data-icon="list"></span></button></div></div></div>
+<div id="active-search" class="search-summary" hidden></div><div id="library-grid" class="library-grid"></div><div id="empty-library" class="empty-state" hidden><span data-icon="search"></span><h3>No threads found. Yet.</h3><p>Try a broader search or another collection.<br>Quoted phrases match exactly; separate terms must all appear.</p><button id="clear-filters" class="secondary-button">Show everything ↗</button></div>
+<div class="library-footnote"><span>✳</span><p id="library-footnote">A starter collection about the spaces between things. <strong>All nine sample sources are fictional.</strong></p><button id="restore-samples">Restore samples ↺</button></div></section>
+<section id="brief-view" hidden><div class="brief-hero"><div class="eyebrow"><span></span> KEEP WHAT MATTERS. MAKE IT YOURS.</div><h1>Your next idea,<br><em>taking shape.</em></h1><p>A collection of exact quotes and your own observations.<br>Every thought has a trail back to where it began.</p></div><div class="brief-toolbar"><div><label for="brief-title">BRIEF TITLE</label><input id="brief-title" maxlength="160" value="Notes on a more thoughtful world"></div><button id="export-brief" class="primary-button"><span data-icon="download"></span> Export Markdown</button></div><div id="brief-empty" class="empty-state"><span data-icon="bookmark"></span><h3>A blank page is a good beginning.</h3><p>Open a source and save a passage.<br>Your quotes, notes, and citations will come together here.</p><button id="browse-library" class="secondary-button">Explore the collection ↗</button></div><div id="brief-pins" class="brief-pins"></div></section>
+<footer class="main-footer"><span>MADE FOR HUMAN CURIOSITY.</span><span>COMMONPLACE <i>✳</i> BY DRIVER</span></footer></main></div>
+<dialog id="reader" class="reader"><div class="reader-top"><div><span data-icon="book"></span><span id="reader-type">FIELD NOTES</span><span id="reader-sample" class="sample-badge">FICTIONAL SAMPLE</span></div><button id="reader-close" class="icon-button" aria-label="Close document">×</button></div><div class="reader-layout"><article class="reader-article"><div id="reader-tags" class="reader-tags"></div><h2 id="reader-title"></h2><div id="reader-meta" class="reader-meta"></div><div class="reader-instruction"><span data-icon="bookmark"></span><span>Keep a passage with <strong>＋</strong>. Its source comes with it.</span></div><div id="reader-body" class="reader-body"></div><div class="reader-bottom"><span id="source-filename"></span><button id="delete-source" class="text-button">Remove source</button></div></article><aside class="reader-aside"><div class="eyebrow">FOLLOW A THREAD <span>↗</span></div><p>Nearby ideas in your library.</p><div id="related-docs"></div><div class="connection-note"><span>✳</span><p>Connected by shared language, not an AI verdict. Read the source. Make your own connection.</p></div><div class="reader-brief-link"><span id="reader-pin-count">0 passages in your brief</span><button id="reader-to-brief">View your brief ↗</button></div></aside></div></dialog>
+<dialog id="about-dialog" class="about-dialog"><div class="dialog-top"><span class="eyebrow">A NOTE FROM DRIVER</span><button id="about-close" class="icon-button" aria-label="Close workspace information">×</button></div><h2>A little clarity<br>goes a <em>long way.</em></h2><p>Commonplace is a working, private research desk. Read documents, discover shared language, collect exact passages, add your interpretation, and take your work with you.</p><div class="about-features"><div><span data-icon="lock"></span><strong>Local by design</strong><p>Documents and notes stay in this browser’s local storage. Nothing is uploaded. This is device-local storage, not encryption or cloud backup. Export important work.</p></div><div><span data-icon="link"></span><strong>Connections you can inspect</strong><p>Related sources use TF-IDF cosine similarity. Shared words explain suggestions. This is lexical discovery, not semantic AI or fact checking.</p></div><div><span data-icon="quote"></span><strong>A source for every quote</strong><p>Saved passages keep the exact text, title, author, and original line numbers. Your notes stay separate. Sample documents are fictional and labeled.</p></div><div><span data-icon="file"></span><strong>Bring your own material</strong><p>Import UTF-8 TXT, Markdown, CSV, or JSON. Up to 2 MB per file and 8 MB of source text per workspace, subject to browser storage limits. PDF is not supported.</p></div></div><div class="shortcut-row"><span><kbd>/</kbd> Search</span><span><kbd>⌘ / Ctrl K</kbd> Search</span><span><kbd>Esc</kbd> Close a source</span></div><button id="export-workspace" class="secondary-button">Back up workspace as JSON ↓</button><p class="about-small">Restore a backup through “Add to your library.” A Commonplace backup merges its documents and saved passages into the current workspace. The document text is treated as content, never as executable HTML.</p></dialog>
+<div id="drop-overlay" class="drop-overlay" hidden><span>＋</span><h2>Make a little room<br>for your next idea.</h2><p>Drop TXT, Markdown, CSV, JSON, or a Commonplace backup.</p></div><div id="toast" class="toast" role="status" popover="manual" hidden></div><span id="announcements" class="sr-only" aria-live="polite"></span>
+</body></html>
