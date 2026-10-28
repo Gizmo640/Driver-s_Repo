@@ -50,3 +50,7 @@ There are also model/server tests and secondary small-screen layout checks. They
 ## Working on the code
 
 Optional development and test instructions are in **[DEVELOPING.md](DEVELOPING.md)**. They are separate from running the already-built Linux desktop app.
+
+## Conversation and project history
+
+[CHAT_HISTORY.md](CHAT_HISTORY.md) records the conversation, your requests and corrections, the implementation history, delivery mistakes, and verified repository commits.
